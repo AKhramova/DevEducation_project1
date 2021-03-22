@@ -17,10 +17,10 @@
     "photo": "",
     "dateOfBirth": "04.01.2000",
     "yo": 21,
-    "height": null,
-    "weight": null,
+    "height": 167,
+    "weight": 50,
     "hobby": [
-      "рисование",
+      "сон",
       "книги",
       "спорт"
     ]
@@ -42,8 +42,8 @@
     "photo": "",
     "dateOfBirth": "31.01.2000",
     "yo": 21,
-    "height": null,
-    "weight": null,
+    "height": 185,
+    "weight": 68,
     "hobby": [
       "компютерные игры",
       "музыка"
