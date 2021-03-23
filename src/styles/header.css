@@ -1,0 +1,14 @@
+.header-content{
+  display: grid;
+  grid-template-columns: 1fr 1fr 10fr;
+  align-items: center;
+  padding-top: 20px;
+}
+
+.navigation{
+  justify-self: center;
+}
+
+.navigation a{
+  margin-right: 15px;
+}

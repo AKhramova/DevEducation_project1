@@ -1,0 +1,164 @@
+button:focus {
+  outline: none;
+}
+select:focus {
+  outline: none;
+}
+  /* QUESTIONS PAGE */
+.questions {
+  padding-top: 20px;
+}
+.container {
+  width: 100%;
+  padding: 0 40px;
+}
+  /* QUESTION'S HEADER */
+.bar {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.panel {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.select-line {
+  width: 600px;
+  height: 50px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.select-line select, 
+.select-line select:nth-child(2)  {
+  width: 250px;
+  height: 30px;
+}
+  /* QUESTION'S FIELD  */
+.list-of-questions {
+  border: 1px solid black;
+  width: auto;
+  min-height: calc(100vh - 200px);
+}
+.questions-container {
+  margin: 30px 50px;
+}
+  /* NO QUESTIONS MESSAGE */
+.questions-container .message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  font-size: 30px;
+  color: lightgray;
+}
+  /* QUESTIN ITEM */
+.question {
+  margin: 20px 0;
+  width: 100%;
+  min-height: 200px;
+  overflow: hidden;    
+  position: relative;
+  border: 1px solid black;
+  padding: 15px;
+  line-height: 1.5;
+}
+.question:hover  .delete-btn {
+  opacity: 1;
+} 
+.question div {
+  margin: 10px 0;
+  text-align: justify;
+}
+.question-text {
+  width: calc(100% - 100px);
+}
+  /* DELETE QUESTION BUTTON */
+.delete-btn {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  transition: .3s ease;
+  cursor: pointer;
+  transform: translate(0, -50%) rotate(45deg);
+  opacity: 0;
+}
+.delete-btn::before {
+  content: '';
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -2px;
+  background: red;
+}
+.delete-btn::after {
+  content: '';
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -2px;
+  background: red;
+}
+
+  /* NEW QUESTION BUTTON */
+.plus-button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  transition: .3s ease;
+  cursor: pointer;
+}
+.plus-button::before {
+  content: '';
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -2px;
+  background: red;
+}
+.plus-button::after {
+  content: '';
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -2px;
+  background: red;
+}
+.plus-button:hover {
+  transform: rotate(360deg);
+}
+
+/* MODAL */
+/* .modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  background: rgba(0,0,0,.8);
+  opacity: 0;
+  transition: .5s ease;
+} */
