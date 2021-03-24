@@ -1,4 +1,4 @@
-import './styles/styles.css'
+import './styles/styles.scss'
 
 window.addEventListener('DOMContentLoaded', () => {
   // Тут вызываем все модули
