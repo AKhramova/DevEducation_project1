@@ -1,0 +1,110 @@
+[
+  {
+    "fullName": "Малик Алексей",
+    "photo": "",
+    "dateOfBirth": "27.06.1994",
+    "yo": 26,
+    "height": 183,
+    "weight": 70,
+    "post": "Front-end developer",
+    "hobby": [
+      "компютерные игры",
+      "книги",
+      "музыка"
+    ]
+  },
+  {
+    "fullName": "Храмова Анастасия",
+    "photo": "",
+    "dateOfBirth": "04.01.2000",
+    "yo": 21,
+    "height": 167,
+    "weight": 50,
+    "post": "Front-end developer",
+    "hobby": [
+      "сон",
+      "книги",
+      "спорт"
+    ]
+  },
+  {
+    "fullName": "Николаева Наталия",
+    "photo": "",
+    "dateOfBirth": "19.09.2001",
+    "yo": 19,
+    "height": 157,
+    "weight": 47,
+    "post": "Front-end developer",
+    "hobby": [
+      "психология",
+      "танцы"
+    ]
+  },
+  {
+    "fullName": "Рашевский Алексей",
+    "photo": "",
+    "dateOfBirth": "31.01.2000",
+    "yo": 21,
+    "height": 185,
+    "weight": 68,
+    "post": "Front-end developer",
+    "hobby": [
+      "компютерные игры",
+      "музыка"
+    ]
+  },
+  {
+    "fullName": "Грушевская Марина",
+    "photo": "",
+    "dateOfBirth": "18.04.1994",
+    "yo": 26,
+    "height": 172,
+    "weight": 55,
+    "post": "Front-end developer",
+    "hobby": [
+      "сноубординг",
+      "путешевствия",
+      "музыка"
+    ]
+  },
+  {
+    "fullName": "Мосийчук Александр",
+    "photo": "",
+    "dateOfBirth": "09.12.1998",
+    "yo": 22,
+    "height": 191,
+    "weight": 72,
+    "post": "QA Automation",
+    "hobby": [
+      "путешевствия",
+      "танцы"
+    ]
+  },
+  {
+    "fullName": "Франкова Юлия",
+    "photo": "",
+    "dateOfBirth": "17.03.1997",
+    "yo": 24,
+    "height": 163,
+    "weight": 50,
+    "post": "QA Automation",
+    "hobby": [
+      "бег",
+      "чтение книг",
+      "йога"
+    ]
+  },
+  {
+    "fullName": "Тимощук Анастасия",
+    "photo": "",
+    "dateOfBirth": "13.06.1996",
+    "yo": 24,
+    "height": 165,
+    "weight": 60,
+    "post": "Web designer",
+    "hobby": [
+      "фотография",
+      "рисование"
+    ]
+  }
+]

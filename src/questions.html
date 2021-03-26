@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questions</title>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <img src="" alt="logo teams" class="logo-img">
+        <p class="logo">DevFiksiki</p>
+        <nav class="navigation">
+          <a href="./index.html">Home</a>
+          <a href="#">Questions</a>
+          <a href="./about.html">About</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <div class="questions">
+    <div class="container">
+      <div class="bar">
+        <div class="panel">
+          <div class="select-line">
+            <select name="file-system" id="file-system" class="file-system">
+              <option value="">--Select file system--</option>
+              <option value="CSV">CSV</option>
+              <option value="JSON">JSON</option>
+              <option value="XML">XML</option>
+              <option value="YAML">YAML</option>
+            </select>
+            <select name="questions-theme" id="questions-theme" class="questions-theme">
+              <option value="">--Select question theme--</option>
+              <option value="theme_1">Theme 1</option>
+              <option value="theme_2">Theme 2</option>
+              <option value="theme_3">Theme 3</option>
+              <option value="theme_4">Theme 4</option>
+              <option value="theme_5">Theme 5</option>
+            </select>
+          </div>
+          <button id="new-question" class="plus-button">
+          </button>
+        </div>
+      </div>
+      <div class="list-of-questions">
+        <div class="questions-container">
+          <!-- <p class="message">
+                        There are no questions
+                    </p> -->
+          <div class="question">
+            <div class="question-text">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non nostrum molestias autem quis
+              laudantium libero magnam dicta error deserunt, eum, quos facere blanditiis et, perferendis
+              neque tenetur sapiente sunt ipsam?
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non nostrum molestias autem quis
+              laudantium libero magnam dicta error deserunt, eum, quos facere blanditiis et, perferendis
+              neque tenetur sapiente sunt ipsam?
+            </div>
+            <div class="question-answer">
+              <span class="answer-key">Ответ:
+                <span class="answer-value">Истина/ложь</span>
+              </span>
+            </div>
+            <div class="question-theme">
+              <div class="question-theme-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+              </div>
+            </div>
+            <button id="delete-message" class="delete-btn"></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Popup -->
+  <div class="fon">
+    <div class="modal">
+      <div class="close-btn">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      </div>
+      <div class="question-text">
+        <label for="">Question..
+          <p><textarea name="comment" rows="3"></textarea></p>
+        </label>
+      </div>
+      <div class="select-theme">Theme
+        <select name="Choose-theme" id="">
+          <option value="">Select one theme</option>
+          <option value="Theme1">Theme1</option>
+          <option value="Theme2">Theme2</option>
+          <option value="Theme3">Theme3</option>
+          <option value="Theme4">Theme4</option>
+          <option value="Theme5">Theme5</option>
+        </select>
+      </div>
+      <div class="choose-answer">
+        <form>
+          <p>Answer:</p>
+          <div class="choose-answer2">
+            <label for="answerTrue">True
+              <input type="radio" id="answerTrue" name="answer" value="true">
+            </label>
+            <label for="answerFalse">False
+              <input type="radio" id="answerFalse" name="answer" value="false">
+            </label>
+          </div>
+        </form>
+      </div>
+      <div class="checkBox">
+        <legend>Choose file system:</legend>
+        <div class="check-box">
+          <div>
+            <label for="CSV">CSV
+              <input type="checkbox" id="CSV" name="FileSystem" value="CSV">
+            </label>
+          </div>
+          <div>
+            <label for="JSON">JSON
+              <input type="checkbox" id="JSON" name="FileSystem" value="JSON">
+            </label>
+          </div>
+          <div>
+            <label for="XML">XML
+              <input type="checkbox" id="XML" name="FileSystem" value="XML">
+            </label>
+          </div>
+          <div>
+            <label for="YAML">YAML
+              <input type="checkbox" id="YAML" name="FileSystem" value="YAML">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="buttons">
+        <div class="cancel-btn">
+          <button type="button" class="btn btn-default" data-dismiss="modal">cancel</button>
+        </div>
+        <div class="create-btn">
+          <button type="button" class="btn btn-primary">create</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

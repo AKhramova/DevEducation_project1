@@ -1,0 +1,96 @@
+.fon {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+.modal {
+  position: absolute;
+  border: 1px solid black;
+  width: 600px;
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  right: 25%;
+  left: 25%;
+  top: 25%;
+  padding: 20px;
+  display: block;
+}
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+.question-text {
+  display: flex;
+  flex-direction: column;
+}
+textarea{
+  display: block;
+  width: 500px;
+  margin-top: 10px;
+}
+.select-theme {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 60px;
+  margin-top: 10px;
+}
+select{
+  display: block;
+  width: 500px;
+  margin-top: 5px;
+}
+.choose-answer {
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  margin-top: 15px;
+}
+.choose-answer2 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  justify-content: space-between;
+  width: 150px;
+}
+.choose-answer label{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 60px;
+}
+.checkBox {
+  display: flex;
+  flex-direction: column;
+  height: 50px;
+  margin-top: 10px;
+}
+.check-box {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+  justify-content: space-around;
+  width: 400px;
+}
+.check-box label{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 70px;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+  justify-content: flex-end;
+  width: 100%;
+}
+.buttons button{
+  margin-left: 30px;
+}
