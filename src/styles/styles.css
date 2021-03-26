@@ -1,0 +1,548 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.header-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 10fr;
+      grid-template-columns: 1fr 1fr 10fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20px;
+}
+
+.navigation {
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.navigation a {
+  margin-right: 15px;
+}
+
+.card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 9fr;
+      grid-template-columns: 3fr 9fr;
+}
+
+.photo {
+  width: 200px;
+}
+
+/* GENERAL CONFIG */
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+button:focus {
+  outline: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/* QUESTIONS PAGE */
+.questions {
+  padding-top: 100px;
+  background: #f0f0f0;
+}
+
+.container {
+  width: 100%;
+  padding: 0 40px;
+}
+
+/* QUESTION'S HEADER */
+.bar {
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.panel {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+}
+
+.select-line {
+  width: 600px;
+  height: 50px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.select-line select,
+.select-line select:nth-child(2) {
+  width: 250px;
+  height: 30px;
+}
+
+/* QUESTION'S FIELD  */
+.list-of-questions {
+  position: relative;
+  border: 1px solid black;
+  width: auto;
+  min-height: calc(100vh - 200px);
+  background: white;
+}
+
+.questions-container {
+  margin: 30px 50px;
+}
+
+/* NO QUESTIONS MESSAGE */
+.questions-container .message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 30px;
+  color: lightgray;
+}
+
+/* QUESTIN ITEM */
+.question {
+  margin: 20px 0;
+  width: 100%;
+  min-height: 200px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid black;
+  padding: 15px;
+  line-height: 1.5;
+  background: #eeeeee;
+  -webkit-box-shadow: 5px 5px 5px #c8c8c8;
+          box-shadow: 5px 5px 5px #c8c8c8;
+}
+
+.question:hover .delete-btn {
+  opacity: 1;
+}
+
+.question div {
+  margin: 10px 0;
+  text-align: justify;
+}
+
+.question-text {
+  width: calc(100% - 100px);
+}
+
+/* DELETE QUESTION BUTTON */
+.delete-btn {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  -webkit-transform: translate(0, -50%) rotate(45deg);
+          transform: translate(0, -50%) rotate(45deg);
+  opacity: 0;
+}
+
+.delete-btn::before {
+  content: '';
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -2px;
+  background: red;
+}
+
+.delete-btn::after {
+  content: '';
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -2px;
+  background: red;
+}
+
+/* NEW QUESTION BUTTON */
+.plus-button {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  cursor: pointer;
+}
+
+.plus-button::before {
+  content: '';
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -2px;
+  background: red;
+}
+
+.plus-button::after {
+  content: '';
+  width: 4px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -2px;
+  background: red;
+}
+
+.plus-button:hover {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+}
+
+/* MODAL */
+/* .questions {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    background: rgba(0,0,0,.8);
+} */
+/* popUp Window */
+/* .popup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 200px;
+    border: 1px solid black;
+    background: white;
+    scroll-behavior: none;
+    z-index: 10000001;
+} */
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  /* opacity: 0;
+    visibility: hidden; */
+}
+
+/* .popup:target {
+    opacity: 1;
+    visibility: visible;
+} */
+.popup_body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 600px;
+  height: 200px;
+  border: 1px solid black;
+  background: white;
+  z-index: 10000001;
+}
+
+.popUpText {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+.popUpBtns {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 250px;
+}
+
+.popUpBtns button {
+  width: 100px;
+  height: 30px;
+  text-align: center;
+}
+
+/* CLOSE QUESTION BUTTON */
+.closePopUp {
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: 20px;
+  height: 20px;
+  background: none;
+  border: none;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+  cursor: pointer;
+  -webkit-transform: translate(0, -50%) rotate(45deg);
+          transform: translate(0, -50%) rotate(45deg);
+  background: #fff;
+}
+
+.closePopUp::before {
+  content: '';
+  width: 100%;
+  height: 3px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -2px;
+  background: black;
+}
+
+.closePopUp::after {
+  content: '';
+  width: 3px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -2px;
+  background: black;
+}
+
+.fon {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  border: 1px solid black;
+  width: 600px;
+  height: auto;
+  background-color: white;
+  margin: 0 auto;
+  right: 25%;
+  left: 25%;
+  top: 25%;
+  padding: 20px;
+  display: block;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.question-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+textarea {
+  display: block;
+  width: 500px;
+  margin-top: 10px;
+}
+
+.select-theme {
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 60px;
+  margin-top: 10px;
+}
+
+select {
+  display: block;
+  width: 500px;
+  margin-top: 5px;
+}
+
+.choose-answer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 50px;
+  margin-top: 15px;
+}
+
+.choose-answer2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 150px;
+}
+
+.choose-answer label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 60px;
+}
+
+.checkBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 50px;
+  margin-top: 10px;
+}
+
+.check-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 10px;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 400px;
+}
+
+.check-box label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 70px;
+}
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  margin-top: 30px;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 100%;
+}
+
+.buttons button {
+  margin-left: 30px;
+}
+/*# sourceMappingURL=styles.css.map */
