@@ -1,7 +1,7 @@
 {
-  "name": "library",
+  "name": "server",
   "version": "1.0.0",
-  "description": "",
+  "description": "Создать приложение  для тестирования знаний разработчиков.\r Приложение должно содержать три страницы (навигационная панель => HOME, QUESTIONS, ABOUT; header => название команды и логотип.). По дефолту открывается страница HOME.\r На странице HOME необходимо вывести информацию об участниках команды, в виде карточек разработчика. В карточке должны быть следующие данные:\r -Avatar (фото разработчика);\r -Main info (возраст, рост, вес и т.д. Не менее 5ти параметров)\r -Hobbie (2, 3 предложения);\r \tРеализовать возможность изменения данных (EDIT). Все данные разработчиков необходимо загружать с файла developers.json, все возможные модификации данных \r напрямую сохраняются в этот файл. \r Страница QUESTIONS должна включать топ бар с логотипом и названием команды, навигацию по сайту, фильтрацию по файловой системе (select),\r фильтрацию по теме вопроса (select), кнопку добавить вопрос, список вопросов.",
   "main": "index.js",
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack --mode development",
@@ -47,5 +47,13 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AKhramova/DevEducation_project1.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AKhramova/DevEducation_project1/issues"
+  },
+  "homepage": "https://github.com/AKhramova/DevEducation_project1#readme"
 }
