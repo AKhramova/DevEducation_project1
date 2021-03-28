@@ -1,0 +1,9 @@
+# dependencies
+/node_modules
+/server/node_modules
+/server/package-lock.json
+package-lock.json
+# production
+/dist
+
+
