@@ -13,10 +13,7 @@ select:focus {
 .hidden {
     display: none;
 }
-.container {
-    width: 100%;
-    padding: 0 40px;
-}
+
 .background {
     position: fixed;
     bottom: .5%;
@@ -49,6 +46,10 @@ select:focus {
         &:hover {
             background-color: #fff;
         }
+    }
+    &__container {
+        width: 100%;
+        padding: 0 40px;
     }
 }
 .dropdown {
