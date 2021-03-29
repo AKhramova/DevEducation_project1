@@ -22,50 +22,64 @@
         </div>
         </div>
     </header>
+    
+    <div class="questions__panel">
+        <div class="dropdown">
+            <select name="file-system" id="file-system" class="dropdown__file-system">
+                <option value="">-- Select file system --</option>
+                <option value="CSV">CSV</option>
+                <option value="JSON">JSON</option>
+                <option value="XML">XML</option>
+                <option value="YAML">YAML</option>
+            </select>
+            <select name="questions-theme" id="questions-theme" class="dropdown__theme">
+                <option value="">-- Select question theme --</option>
+                <option value="theme_1">Theme 1</option>
+                <option value="theme_2">Theme 2</option>
+                <option value="theme_3">Theme 3</option>
+                <option value="theme_4">Theme 4</option>
+                <option value="theme_5">Theme 5</option>
+            </select>  
+            <button id="new-question" class="dropdown__button questions__button">Add question</button>
+        </div>
+    </div>
+
     <div class="questions">
         <div class="container">
-            <div class="questions__top-bar">
-                <div class="bar__panel panel">
-                    <div class="panel__group dropdown">
-                        <select name="file-system" id="file-system" class="dropdown__file-system">
-                            <option value="">--Select file system--</option>
-                            <option value="CSV">CSV</option>
-                            <option value="JSON">JSON</option>
-                            <option value="XML">XML</option>
-                            <option value="YAML">YAML</option>
-                        </select>
-                        <select name="questions-theme" id="questions-theme" class="dropdown__theme">
-                            <option value="">--Select question theme--</option>
-                            <option value="theme_1">Theme 1</option>
-                            <option value="theme_2">Theme 2</option>
-                            <option value="theme_3">Theme 3</option>
-                            <option value="theme_4">Theme 4</option>
-                            <option value="theme_5">Theme 5</option>
-                        </select>  
-                    </div>
-                    <button id="new-question" class="panel_new-question-button"></button>
-                </div>
-            </div>
+            <img src="/img/6.svg" alt="man" class="background">
             <div class="question-list">
                 <div class="question-list__container questions-container">
                     <!-- <p class="question-list__message">
                         There are no questions
                     </p> -->
-                    <div class="question question__container">
-                        <div class="question__text question__container">
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non nostrum molestias autem quis laudantium libero magnam dicta error deserunt, eum, quos facere blanditiis et, perferendis neque tenetur sapiente sunt ipsam?
-                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non nostrum molestias autem quis laudantium libero magnam dicta error deserunt, eum, quos facere blanditiis et, perferendis neque tenetur sapiente sunt ipsam?
+                    <!-- QUESTION -->
+                    <div class="question">
+                        <div class="question__text" title="Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non nostrum molestias autem quis laudantium libero magnam dicta error deserunt, eum, quos facere blanditiis et, perferendis neque tenetur sapiente sunt ipsam?">
+                            <div class="question__text-box">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non nostrum molestias autem quis laudantium libero magnam dicta error deserunt, eum, quos facere blanditiis et, perferendis neque tenetur sapiente sunt ipsam?
+                            </div>
                         </div>
-                        <div class="question__answer question__container">
-                            <span class="question__answer_answer-key">Ответ:
-                                <span class="question__answer_answer-value">Истина/ложь</span>
-                            </span>
-                        </div>
-                        <div class="question__theme question__container">
-                            <div class="question__theme_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. </div>
+                        <div class="question__answer">
+                            <div class="question__answer-key">Ответ</div>
+                            <div class="question__answer-value">Истина/ложь</div>
                         </div>
                         <button id="delete-message" class="question__button"></button>
-                    </div>      
+                        <div class="question__theme">
+                            <div class="question__theme-key">Theme</div>
+                            <div class="question__theme-value" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit.">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
+                        </div>
+                    </div>     
+                    
+
+
+                    
+
+
+
+
+
+
+
                 </div>
             </div>
         </div>

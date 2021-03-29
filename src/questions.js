@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
   deleteMessageBtn.addEventListener('click', deleteQuestions);
   cancelBtn.addEventListener('click', closePopUp);
   closeBtn.addEventListener('click', closePopUp);
-  
+  popup.addEventListener('click', closePopUp);
   
   function deleteQuestions() {
       popup.classList.remove('hidden');

@@ -5,4 +5,8 @@
           box-sizing: border-box;
   font-family: sans-serif;
 }
+
+body {
+  min-height: 100vh;
+}
 /*# sourceMappingURL=general.css.map */

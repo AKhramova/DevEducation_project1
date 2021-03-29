@@ -1,10 +1,9 @@
-/* GENERAL CONFIG */
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
-}
+$body-color: #E2E4ED;
+$input-color: #EBECF0;
+$button-color: #d2d4dd;
+$question-color: #F0F1F6;
+$border-color: #8b8b8b;
+
 button:focus {
     outline: none;
 }
@@ -14,87 +13,76 @@ select:focus {
 .hidden {
     display: none;
 }
-.header {
-    height: 64px;
-}
 .container {
     width: 100%;
     padding: 0 40px;
 }
-/* QUESTIONS PAGE */
+.background {
+    position: fixed;
+    bottom: .5%;
+    left: .5%;
+}
+/* HEADER */
+.header {
+    height: 64px;
+    background: linear-gradient(to bottom, #fff, #CFD3E3);
+}
+/* PANEL */
 .questions {
-    // padding-top: 100px;
-    background: rgb(240, 240, 240);
+    min-height: calc(100vh - 174px);
+    background: $body-color;
 
-    &questions__top-bar {
-        height: 100px;
+    &__panel {
+        width: 100%;
+        height: 110px;
+        padding: 0 40px;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        border-bottom: 1px solid $border-color;
+        background: linear-gradient(to bottom, #fff, $body-color);
     }
-}
-.panel {
-    width: 100%;
-    height: 110px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
-    &_new-question-button {
+    &__button {
         position: relative;
-        width: 20px;
-        height: 20px;
-        background: none;
-        border: none;
+        width: 16%;
+        height: 30px;
+        background: $button-color;
+        border: 1px solid $border-color;
         transition: .3s ease;
         cursor: pointer;
-        &::before {
-            content: '';
-            width: 100%;
-            height: 4px;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            margin-top: -2px;
-            background: red;
-        }
-        &::after {
-            content: '';
-            width: 4px;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            margin-left: -2px;
-            background: red;
-        }
+
         &:hover {
-            transform: rotate(360deg);
+            background-color: #fff;
         }
     }
 }
 .dropdown {
-    width: 600px;
+    width: 100%;
     height: 50px;
     position: relative;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     &__file-system, 
-    &__theme {
-        width: 250px;
+    &__theme,
+    &__button {
+        width: 16%;
         height: 30px;
+        background: $input-color;
+        text-align: center;
     }
 }
-/* QUESTION'S FIELD  */
+/* QUESTION LIST */
 .question-list {
     position: relative;
-    border: 1px solid black;
     width: auto;
     min-height: calc(100vh - 200px);
-    background: rgb(255, 255, 255);
     &__container {
-        margin: 30px 50px;
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
     }
     &__message {
         position: absolute;
@@ -103,64 +91,107 @@ select:focus {
         transform: translate(-50%, -50%);
         text-align: center;
         font-size: 30px;
-        color: lightgray;
+        color: #000;
     }
 }
-/* QUESTIN ITEM */
+
+/* QUESTION */
+
 .question {
     margin: 20px 0;
-    width: 100%;
-    min-height: 200px;
+    width: 44%;
+    min-height: 268px;
     overflow: hidden;    
     position: relative;
     border: 1px solid black;
-    padding: 15px;
     line-height: 1.5;
-    background: rgb(238, 238, 238);
+    background: $question-color;
     box-shadow: 5px 5px 5px rgb(200, 200, 200);
+    font-size: .9em;
+
     &__text {
-        width: calc(100% - 100px);
+        display: flex;
+        align-items: center;
+        width: 80%;
+        height: 84px;
+        margin: 36px auto 0;
+        border: 1px solid $border-color;
+        padding: 10px;
+        text-align: justify;
+        background: $input-color;
+        &:hover {
+            text-overflow: inherit;
+            white-space: inherit;
+        }
     }
+
+    &__text-box {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        max-height: 60px;
+        line-height: 20px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
     &:hover  .question__button {
         opacity: 1;
-    } 
-    &__container {
-        margin: 10px 0;
-        text-align: justify;
     }
+
     &__button {
         position: absolute;
-        top: 50%;
-        right: 5%;
-        width: 20px;
-        height: 20px;
-        background: none;
-        border: none;
-        cursor: pointer;
-        transform: translate(0, -50%) rotate(45deg);
-        opacity: 0;
-        &::before {
-            content: '';
-            width: 100%;
-            height: 4px;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            margin-top: -2px;
-            background: red;
+    top: 47%;
+    right: 41px;
+    width: 67px;
+    height: 65px;
+    border: none;
+    cursor: pointer;
+    background: url(/src/img/7.png) no-repeat;
+    opacity: 0;
+    transform: scale(0.5);
+    }
+    &__answer {
+        display: flex;
+        flex-direction: row;
+        height: 30px;
+        margin: 20px 10% 0;
+        /* почему себя так ведет падинг? бордер внутри паддинга */
+        // padding: 5px;
+        text-align: center;
+        &-key,
+        &-value {
+            padding: 3px 0 0;
+            width: 150px;
+            border: 1px solid $border-color;
+            background: $input-color;
+            
         }
-        &::after {
-            content: '';
-            width: 4px;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 50%;
-            margin-left: -2px;
-            background: red;
+    }
+    &__theme {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 200px;
+        height: 25px;
+        margin: 40px 10% 0;
+        border: 1px solid $border-color;
+        background: $input-color;
+        padding: 0 5px;
+        &-key {
+            padding-right: 5px;
+        }
+        &-value {
+            padding: 0 5px;
+            width: 250px;
+            border-left: 1px solid $border-color;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
         }
     }
 }
+/* POPUP */
 .popup {
     position: fixed;
     width: 100%;
@@ -189,7 +220,7 @@ select:focus {
         height: 200px;
         border: 1px solid black;
     
-        background: white;
+        background: $input-color;
         z-index: 10000001;
     }
     &__text {
@@ -215,7 +246,7 @@ select:focus {
         transition: .3s ease;
         cursor: pointer;
         transform: translate(0, -50%) rotate(45deg);
-        background: #fff;
+        background: $question-color;
         &::before {
             content: '';
             width: 100%;
@@ -242,5 +273,12 @@ select:focus {
         width: 100px;
         height: 30px;
         text-align: center;
+        background: $button-color;
+        transition: .3s ease;
+
+        &:hover,
+        &:hover {
+            background: #fff;
+        }
     }
 }
