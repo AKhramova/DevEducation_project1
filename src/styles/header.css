@@ -1,20 +1,46 @@
-.header-content {
+.header {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFFFFF), to(rgba(255, 255, 255, 0))), #CFD3E3;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #CFD3E3;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 19px;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+.header__logo {
+  width: 80px;
+}
+
+.header__content {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr 10fr;
-      grid-template-columns: 1fr 1fr 10fr;
+  -ms-grid-columns: 1fr 4fr 4fr;
+      grid-template-columns: 1fr 4fr 4fr;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-top: 20px;
+  padding: 10px 0;
 }
 
-.navigation {
-  -ms-grid-column-align: center;
-      justify-self: center;
+.header__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-.navigation a {
-  margin-right: 15px;
+.header__section_link {
+  text-decoration: none;
+  color: #444141;
+}
+
+.header__section_link:hover {
+  background-color: #9696A3;
+  border-radius: 4px;
 }
 /*# sourceMappingURL=header.css.map */
