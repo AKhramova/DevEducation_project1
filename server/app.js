@@ -27,7 +27,7 @@ var server = http.createServer(function (req, res) {
         read(res, __dirname + '/data/questionsJSON.json', headers)
         break
       case '/questions?file=csv':
-        readCsv(res, __dirname + '/data/questionsCSV.csv', headers)
+        read(res, __dirname + '/data/questionsCSV.csv', headers)
         break
       case '/questions?file=xml':
         read(res, __dirname + '/data/questionsXML.xml', headers)
@@ -59,6 +59,10 @@ var server = http.createServer(function (req, res) {
         }
       })
     }
+  }
+
+  if (req.method === 'DELETE') {
+
   }
 })
 
