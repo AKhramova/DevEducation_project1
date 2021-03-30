@@ -13,7 +13,17 @@ function read(res, file, headers) {
     })
 }
 
-function write(req, res, file, headers) {
+function writeQuestions(req, res, file, headers) {
+  var data = JSON.parse(fs.readFileSync(file, 'utf-8'))
+  data.unshift(req.body)
+
+  fs.writeFile(file, JSON.stringify(data), () => {
+    res.writeHead(200, headers)
+    res.end(JSON.stringify({ message: "ok" }))
+  })
+}
+
+function writeUsers(req, res, file, headers) {
   jsonParser(req, res, function (err) {
     if (err) throw err
     fs.writeFile(file, JSON.stringify(req.body), () => {
@@ -23,6 +33,7 @@ function write(req, res, file, headers) {
   })
 }
 
+
 module.exports = {
-  read, write
+  read, writeUsers, writeQuestions
 }

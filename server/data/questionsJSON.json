@@ -1,7 +1,12 @@
 [
   {
+    "id": 31234122,
     "question": "Если все составные части исходного объекта были заменены, остаётся ли объект тем же объектом?",
     "answer": true,
-    "topic": "philosophical"
+    "theme": "philosophical",
+    "formats": [
+      "json",
+      "csv"
+    ]
   }
 ]

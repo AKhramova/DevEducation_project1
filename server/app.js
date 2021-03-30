@@ -1,7 +1,8 @@
 var http = require('http')
 var { writeToCsv, readCsv } = require('./assets/convertCsv')
-var { write, read } = require('./assets/convertJson')
-
+var { writeQuestions, writeUsers, read } = require('./assets/convertJson')
+var { json } = require('body-parser')
+var jsonParser = json()
 
 var headers = {
   'Access-Control-Allow-Origin': '*',
@@ -39,23 +40,24 @@ var server = http.createServer(function (req, res) {
   }
 
   if (req.method === 'POST') {
-    switch (req.url) {
-      case '/team':
-        write(req, res, __dirname + '/data/team.json', headers)
-        break
-      case '/questions?file=json':
-        write(req, res, __dirname + '/data/questionsJSON.json', headers)
-        break
-      case '/questions?file=csv':
-        writeToCsv(req, res, __dirname + '/data/questionsCSV.csv', headers)
-        break
-      case '/questions?file=xml':
-        write(req, res, __dirname + '/data/questionsXML.xml', headers)
-        break
-      case '/questions?file=yaml':
-        write(req, res, __dirname + '/data/questionsYAML.yaml', headers)
-        break
-      default: req.url
+    if (req.url === '/team') writeUsers(req, res, __dirname + '/data/team.json', headers)
+
+    if (req.url === '/questions') {
+      jsonParser(req, res, function (err) {
+        if (err) throw err
+        var formats = req.body.formats
+        for (var i = 0; i < formats.length; i++) {
+          if (formats[i] === 'csv') {
+            writeQuestions(req, res, __dirname + '/data/questionsCSV.csv', headers)
+          }
+          if (formats[i] === 'json') {
+            writeQuestions(req, res, __dirname + '/data/questionsJSON.json', headers)
+          }
+          if (formats[i] === 'xml') {
+            writeQuestions(req, res, __dirname + '/data/questionsXML.xml', headers)
+          }
+        }
+      })
     }
   }
 })
