@@ -1,96 +1,115 @@
-.fon {
+.new-question__background {
   position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.8);
-  display: none;
+  background-color: rgba(0, 0, 0, 0.9);
 }
 .modal {
   position: absolute;
-  border: 1px solid black;
-  width: 600px;
-  height: auto;
-  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   margin: 0 auto;
-  right: 25%;
-  left: 25%;
-  top: 25%;
   padding: 20px;
   display: block;
+  width: 600px;
+  height: auto;
+  border: none;
+  background-color: #EBECF0;
+  box-shadow: 2px 2px 5px rgb(200, 200, 200);
 }
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 20px;
+.close {
+position: absolute;
+top: 15px;
+right: 20px;
+  &__modal {
+      border: none;
+      transform: scale(2.3);
+      &:hover {
+        color: rgb(67, 0, 93);
+      }
+  }
 }
-.question-text {
-  display: flex;
-  flex-direction: column;
+.input-question {
+  margin: 15px 0 0;
+&__field {
+  &-text {
+      padding:  10px 10px;
+      display: block;
+      width: 500px;
+      margin: 0 auto;
+      resize: none;
+  }
 }
-textarea{
-  display: block;
-  width: 500px;
-  margin-top: 10px;
 }
-.select-theme {
-  padding-top: 20px;
-  display: flex;
-  flex-direction: column;
-  height: 60px;
-  margin-top: 10px;
-}
-select{
-  display: block;
-  width: 500px;
-  margin-top: 5px;
+.select {
+display: flex;
+flex-direction: column;
+margin-top: 30px;
+  &__theme {
+      display: block;
+      width: 500px;
+      height: 35px;
+      margin-top: 5px;
+      margin: 0 auto;
+  }
 }
 .choose-answer {
-  display: flex;
-  flex-direction: column;
-  height: 50px;
-  margin-top: 15px;
+display: flex;
+flex-direction: column;
+margin-top: 30px;
+  &__group {
+      display: flex;
+      flex-direction: row;
+      margin-top: 10px;
+      justify-content: space-between;
+      width: 300px;
+      margin: 0 auto;
+  }
 }
-.choose-answer2 {
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
-  justify-content: space-between;
-  width: 150px;
-}
-.choose-answer label{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  width: 60px;
+.label-group {
+display: flex;
+flex-direction: row-reverse;
+justify-content: space-between;
+align-items: center;
+width: 60px;
 }
 .checkBox {
-  display: flex;
-  flex-direction: column;
-  height: 50px;
-  margin-top: 10px;
-}
-.check-box {
-  display: flex;
-  flex-direction: row;
-  margin-top: 10px;
-  justify-content: space-around;
-  width: 400px;
-}
-.check-box label{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  width: 70px;
+display: flex;
+flex-direction: column;
+margin-top: 30px;
+  &__choose {
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+      justify-content: space-around;
+      width: 400px;
+      &-label {
+          display: flex;
+          flex-direction: row-reverse;
+          justify-content: space-between;
+          align-items: center;
+      }
+      &-input {
+          margin-right: 10px;
+      }
+  }
 }
 .buttons {
-  display: flex;
-  flex-direction: row;
-  margin-top: 30px;
-  justify-content: flex-end;
-  width: 100%;
+margin-top: 30px;
+  &__group {
+      display: flex;
+      flex-direction: row;
+      margin-top: 10px;
+      justify-content: space-between;
+      width: 300px;
+      margin: 0 auto;
+  }
 }
-.buttons button{
-  margin-left: 30px;
+.buttons .btn{
+padding: 5px;
+width: 70px;
+text-transform: capitalize;
 }

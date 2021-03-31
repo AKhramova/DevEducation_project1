@@ -8,8 +8,6 @@ package-lock.json
 src/styles/*.css
 src/styles/*.css.map
 
-
-
 # production
 /dist
 

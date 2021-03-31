@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Questions</title>
 </head>
-
 <body>
     <div class="header">
         <div class="container">
@@ -54,7 +52,7 @@
 
     <div class="questions">
         <div class="question__container">
-            <img src="/img/6.svg" alt="man" class="background">
+            <img src="/img/boy_with_tables.svg" alt="man" class="questions__background">
             <div class="question-list">
                 <div class="question-list__container questions-container">
                     <!-- <p class="question-list__message">
@@ -87,8 +85,8 @@
         </div>
     </div>
     <!-- POPUP -->
-    <div id="popup" class="popup hidden">
-        <div class="popup__body popup_body">
+    <div id="delete-message-popup" class="popup hidden">
+        <div class="popup__body">
             <div class="popup__content">
                 <div id="closePopUp" class="popup-button">
                     <button id="closePU" class="popup-button__close"></button>
@@ -97,12 +95,80 @@
                     <p>Are you sure you want to delete this question?</p>
                 </div>
                 <div class="popup-group">
-                    <button id="confirm-btn" class="popup-button__confirm">Confirm</button>
-                    <button id="cancel-btn" class="popup-button__cancel">Cancel</button>
+                    <button id="confirm-delete-question" class="popup-button__confirm">Confirm</button>
+                    <button id="cancel-delete-question" class="popup-button__cancel">Cancel</button>
                 </div>
             </div>
         </div>
     </div>
+    <!-- MODAL -->
+    <div id="new-question-modal" class="popup hidden">
+        <div class="new-question__backgroud">
+            <div class="modal">
+              <div class="close">
+                <button id="close-modal-new-question" type="button" class="close__modal" data-dismiss="modal" aria-hidden="true">&times;</button>
+              </div>
+              <div class="input-question">
+                <label for="" class="input-question__field">
+                  <textarea name="comment" rows="3" class="input-question__field-text" placeholder="Question.."></textarea>
+                </label>
+              </div>
+              <div class="select">
+                <select name="Choose-theme" id="" class="select__theme">
+                  <option value="">Select one theme</option>
+                  <option value="Theme1">Theme1</option>
+                  <option value="Theme2">Theme2</option>
+                  <option value="Theme3">Theme3</option>
+                  <option value="Theme4">Theme4</option>
+                  <option value="Theme5">Theme5</option>
+                </select>
+              </div> 
+              <div class="choose-answer">
+                <form>
+                  <div class="choose-answer__group">
+                    <label for="answerTrue"  class="choose-answer__group-true label-group">True
+                      <input type="radio" id="answerTrue"
+                      name="answer" value="true">
+                    </label>
+                    <label for="answerFalse" class="choose-answer__group-false label-group">False
+                      <input type="radio" id="answerFalse"
+                      name="answer" value="false">
+                    </label>
+                  </div>
+                </form> 
+              </div>
+              <div class="checkBox">
+                  <div class="checkBox__choose">
+                    <div>
+                      <label for="CSV" class="checkBox__choose-label">CSV
+                        <input type="checkbox" id="CSV" name="FileSystem" value="CSV" class="checkBox__choose-input">
+                      </label>
+                    </div>
+                    <div>
+                      <label for="JSON" class="checkBox__choose-label">JSON
+                        <input type="checkbox" id="JSON" name="FileSystem" value="JSON" class="checkBox__choose-input">
+                      </label>
+                    </div>
+                    <div>
+                      <label for="XML" class="checkBox__choose-label">XML
+                        <input type="checkbox" id="XML" name="FileSystem" value="XML" class="checkBox__choose-input">
+                      </label>
+                    </div>
+                    <div>
+                      <label for="YAML" class="checkBox__choose-label">YAML
+                      <input type="checkbox" id="YAML" name="FileSystem" value="YAML" class="checkBox__choose-input">
+                      </label>
+                    </div>
+                  </div>
+              </div>
+              <div class="buttons">
+                <div class="buttons__group">
+                  <button id="cancel-modal-new-question" type="button" class="buttons__group-cancel btn" data-dismiss="modal">cancel</button>
+                  <button id="create-modal-new-question" type="button" class="buttons__group-create btn">create</button>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
 </body>
-
 </html>
