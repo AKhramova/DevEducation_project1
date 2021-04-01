@@ -4,5 +4,11 @@ import questionsPageModule from './modules/questions'
 
 window.addEventListener('DOMContentLoaded', () => {
   // Тут вызываем все модули
-  questionsPageModule();
+  if (location.pathname === '/questions.html') {
+    questionsPageModule();
+  } else if (location.pathname === '/about.html') {
+    // страница about; 
+  } else if (location.pathname === '/index.html') {
+    // страница about; 
+  }
 })
