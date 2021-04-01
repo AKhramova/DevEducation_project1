@@ -7,7 +7,6 @@ function questionsPageModule() {
     var cancelDeleteQuestion = document.getElementById('cancel-delete-question');
     var confirmDeleteQuestion = document.getElementById('confirm-delete-question');
     var closeDeleteQuestion = document.getElementById('closePopUp');
-    
     // new question modal window
     var addNewQuestion = document.getElementById('new-question');
     var modalNewQuestion = document.getElementById('new-question-modal');
