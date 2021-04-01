@@ -17,6 +17,10 @@ function read(res, file, headers) {
 }
 
 function writeQuestions(req, res, file, headers) {
+  if (typeof req.body !== 'object' || Array.isArray(req.body)) {
+    return endResponse(res, headers, { message: message.noObj })
+  }
+
   var data = JSON.parse(fs.readFileSync(file, 'utf-8'))
   data.unshift(req.body)
 
@@ -26,6 +30,9 @@ function writeQuestions(req, res, file, headers) {
 }
 
 function deleteQuestion(req, res, file, headers) {
+  if (typeof req.body !== 'object' || Array.isArray(req.body)) {
+    return endResponse(res, headers, { message: message.noObj })
+  }
   var data = JSON.parse(fs.readFileSync(file, 'utf-8'))
 
   var afterDelete = data.filter(function (el) {
