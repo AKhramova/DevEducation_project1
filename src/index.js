@@ -1,14 +1,13 @@
 import './styles/styles.scss'
 import questionsPageModule from './modules/questions'
 import filter from './modules/filter';
-import questionsPageModule from './modules/questions';
-import homePageModule from './modules/home-page-request';
+// import homePageModule from './modules/home-page-request';
 
 
 window.addEventListener('DOMContentLoaded', () => {
   // Тут вызываем все модули
   if (window.location.pathname === '/questions.html') {
-    // questionsPageModule();
+    questionsPageModule();
   } else if (window.location.pathname === '/about.html') {
     // страница about; 
   } else if (window.location.pathname === '/index.html') {
