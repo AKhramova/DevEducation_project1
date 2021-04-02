@@ -10,7 +10,7 @@ export default function filter() {
   if (!localStorage.getItem(fileName)) {
     localStorage.setItem(fileName, fileFilter.value)
   }
-  if (!localStorage.getItem(themeFilter)) {
+  if (!localStorage.getItem(themeName)) {
     localStorage.setItem(themeName, themeFilter.value)
   }
 
@@ -26,10 +26,10 @@ export default function filter() {
   })
 
   themeFilter.addEventListener('change', function (e) {
-    localStorage.setItem(themeFilter, e.target.value)
+
+    localStorage.setItem(themeName, e.target.value)
     //вместо запроса надо сделать рендер функцию
     api.getRequest(`/questions?file=${fileFilter.value}&theme=${e.target.value}`)
       .then(data => console.log(data))
   })
-
 }
