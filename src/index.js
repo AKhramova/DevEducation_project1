@@ -1,6 +1,8 @@
 import './styles/styles.scss'
 import questionsPageModule from './modules/questions'
 import filter from './modules/filter';
+import questionsPageModule from './modules/questions';
+import homePageModule from './modules/home-page-request';
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -13,4 +15,6 @@ window.addEventListener('DOMContentLoaded', () => {
     // страница about; 
   }
   filter('#file-system', 'file_filter')
+  // homePageModule();
+
 })
