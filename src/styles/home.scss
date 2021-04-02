@@ -1,6 +1,6 @@
 .block-main{
   background: #EBECF0;
-  height: 95vh;
+  height: 90vh;
 }
 .block-main__block-figure{
   max-width: 80%;
@@ -9,13 +9,17 @@
   display: flex;
 }
 .content__photo-develop{
-  width: 25%;
-  height: 300px;
+  width: 100%;
+  height: auto;
   margin:  10% 1%;
 }
 .content__group{
   width: 25%;
-  margin: 15% 3%;
+  margin: 6% 3%;
+}
+.photo-container {
+  width: 300px;
+  height: auto;
 }
 .information__name, .information__height, .information__weight,
 .information__age, .information__birthday, .information__hobby{
@@ -24,12 +28,13 @@
 }
 .information__edit{
   position: absolute;
-  margin: 5% 1%;
+  margin: 2% 1%;
   width: 160px;
   height: 29px;
   border-radius: 100px;
   background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 52.38%), #EBECF0;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 2px rgba(0, 0, 0, 0.11);
+  cursor: pointer;
 }
 .block-main__picture{
   width: 400px;
@@ -41,11 +46,15 @@ div.block-main__right, div.block-main__left{
   display: inline-block;
   font-size: 30px;
   margin: 20% 2%;
-}
+  cursor: pointer;
+} 
 .block-main__right{
   float: right;
 }
 .block-main__left{
   transform: rotate(180deg);
   float: left;
+}
+.hidden {
+  visibility: hidden;
 }
