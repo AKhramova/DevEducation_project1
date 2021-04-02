@@ -260,3 +260,9 @@ select:focus {
         }
     }
 }
+.active {
+    background: rgba(112, 104, 226, 0.699);
+    border-radius: 4px;
+    padding: 4px 7px 7px 7px;
+    opacity: 0.95;
+}
