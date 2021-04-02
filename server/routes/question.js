@@ -1,19 +1,23 @@
 var { writeQuestions, read, deleteQuestion } = require('../assets/convertJson')
-
+var url = require('url')
 function question({ req, res, headers, dir }) {
+  var parseUrl = url.parse(req.url).query
+  var query = new URLSearchParams(parseUrl)
+
   if (req.method === "GET") {
+
     switch (req.url) {
-      case '/questions?file=json':
-        read(res, dir + '/data/questions.json', headers)
+      case `/questions?file=json&theme=${query.get('theme')}`:
+        read(res, dir + '/data/questions.json', headers, query)
         break
-      case '/questions?file=csv':
-        read(res, dir + '/data/questions.csv', headers)
+      case `/questions?file=csv&theme=${query.get('theme')}`:
+        read(res, dir + '/data/questions.csv', headers, query)
         break
-      case '/questions?file=xml':
-        read(res, dir + '/data/questions.xml', headers)
+      case `/questions?file=xml&theme=${query.get('theme')}`:
+        read(res, dir + '/data/questions.xml', headers, query)
         break
-      case '/questions?file=yaml':
-        read(res, dir + '/data/questions.yaml', headers)
+      case `/questions?file=yaml&theme=${query.get('theme')}`:
+        read(res, dir + '/data/questions.yaml', headers, query)
         break
       default: req.url
     }

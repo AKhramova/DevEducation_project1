@@ -6,11 +6,25 @@ var message = {
   noObj: 'Неправильный формат. Отправьте объект',
 }
 
-function read(res, file, headers) {
+function read(res, file, headers, query) {
   fs.readFile(file,
     'utf-8',
     function (err, data) {
+      console.log('e')
       if (err) throw err
+      if (query) {
+        if (query.get('theme') === 'all') {
+          res.writeHead(200, headers)
+          return res.end(data)
+        } else if (query.get('theme')) {
+          var filterData = JSON.parse(data).filter(function (el) {
+            return el.theme.toLowerCase() === query.get('theme')
+          })
+        }
+
+        res.writeHead(200, headers)
+        return res.end(JSON.stringify(filterData))
+      }
       res.writeHead(200, headers)
       res.end(data)
     })
