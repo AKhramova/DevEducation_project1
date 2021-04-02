@@ -1,5 +1,4 @@
 import './styles/styles.scss'
-import questionsPageModule from './modules/questions'
 import filter from './modules/filter';
 // import homePageModule from './modules/home-page-request';
 
