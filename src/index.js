@@ -1,14 +1,16 @@
 import './styles/styles.scss'
 import questionsPageModule from './modules/questions'
+import filter from './modules/filter';
 
 
 window.addEventListener('DOMContentLoaded', () => {
   // Тут вызываем все модули
-  if (location.pathname === '/questions.html') {
-    questionsPageModule();
-  } else if (location.pathname === '/about.html') {
+  if (window.location.pathname === '/questions.html') {
+    // questionsPageModule();
+  } else if (window.location.pathname === '/about.html') {
     // страница about; 
-  } else if (location.pathname === '/index.html') {
+  } else if (window.location.pathname === '/index.html') {
     // страница about; 
   }
+  filter('#file-system', 'file_filter')
 })
