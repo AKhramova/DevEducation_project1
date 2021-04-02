@@ -10,7 +10,6 @@ function read(res, file, headers, query) {
   fs.readFile(file,
     'utf-8',
     function (err, data) {
-      console.log('e')
       if (err) throw err
       if (query) {
         if (query.get('theme') === 'all') {

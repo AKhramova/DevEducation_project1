@@ -3,7 +3,27 @@
     "id": "2021-04-02T07:46:25.163Z",
     "question": "123",
     "answer": true,
-    "theme": "philosophical",
+    "theme": "HTML",
+    "formats": [
+      "json",
+      "csv"
+    ]
+  },
+  {
+    "id": "2021-04-02T07:46:25.163Z",
+    "question": "123",
+    "answer": true,
+    "theme": "HTML",
+    "formats": [
+      "json",
+      "csv"
+    ]
+  },
+  {
+    "id": "2021-04-02T07:46:25.163Z",
+    "question": "123",
+    "answer": true,
+    "theme": "JS",
     "formats": [
       "json",
       "csv"

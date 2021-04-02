@@ -5,7 +5,7 @@ const homeModule = () => {
         request.open('GET', 'http://localhost:3000/team', true);
         request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
         request.send();
-        request.addEventListener('load', function() {
+        request.addEventListener('load', function () {
             if (request.status === 200) {
                 let data = JSON.parse(request.response);
                 console.log(data);
