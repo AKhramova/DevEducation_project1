@@ -10,8 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
   } else if (location.pathname === '/about.html') {
     // страница about; 
   } else if (location.pathname === '/index.html') {
-    // страница about; 
+    homePageModule();
   }
-  // homePageModule();
   
 })

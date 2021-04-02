@@ -32,7 +32,7 @@
   {
     "id": 3,
     "fullName": "Николаева Наталия",
-    "photo": "./img/team/Natasha.jpg",
+    "photo": "./img/team/Natasha.jpeg",
     "dateOfBirth": "19.09.2001",
     "yo": 19,
     "height": 157,
@@ -75,7 +75,7 @@
   {
     "id": 6,
     "fullName": "Мосийчук Александр",
-    "photo": "./img/team/Alexandr.jpg",
+    "photo": "./img/team/Alexandr.jpeg",
     "dateOfBirth": "09.12.1998",
     "yo": 22,
     "height": 191,
@@ -89,7 +89,7 @@
   {
     "id": 7,
     "fullName": "Франкова Юлия",
-    "photo": "./img/team/Julia.jpg",
+    "photo": "./img/team/Julia.jpeg",
     "dateOfBirth": "17.03.1997",
     "yo": 24,
     "height": 163,
