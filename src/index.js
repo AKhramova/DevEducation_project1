@@ -1,5 +1,6 @@
 import './styles/styles.scss'
-import questionsPageModule from './modules/questions'
+import questionsPageModule from './modules/questions';
+import homePageModule from './modules/home-page-request';
 
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -11,4 +12,6 @@ window.addEventListener('DOMContentLoaded', () => {
   } else if (location.pathname === '/index.html') {
     // страница about; 
   }
+  // homePageModule();
+  
 })
