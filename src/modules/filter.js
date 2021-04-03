@@ -1,4 +1,4 @@
-import api from "./getRequest"
+import api from "./api"
 
 export default function filter() {
   var fileFilter = document.querySelector('#file-system'),
@@ -26,7 +26,6 @@ export default function filter() {
   })
 
   themeFilter.addEventListener('change', function (e) {
-
     localStorage.setItem(themeName, e.target.value)
     //вместо запроса надо сделать рендер функцию
     api.getRequest(`/questions?file=${fileFilter.value}&theme=${e.target.value}`)

@@ -6,7 +6,7 @@ var api = {
       var request = new XMLHttpRequest()
       request.open('GET', this.url + route, true)
       request.addEventListener("load", function () {
-        if (request.status < 400) {
+        if (request.status < 300) {
           responce(request.response)
         } else reject(new Error("Request failed: " + request.statusText))
       })
@@ -25,7 +25,7 @@ var api = {
       request.open(method, this.url + route, true)
       request.setRequestHeader("Content-Type", "application/json")
       request.addEventListener("load", function () {
-        if (request.status < 400) responce(request.responseText)
+        if (request.status < 300) responce(request.responseText)
         else fail(new Error("Request failed: " + request.statusText))
       })
 

@@ -20,7 +20,6 @@ function read(res, file, headers, query) {
             return el.theme.toLowerCase() === query.get('theme')
           })
         }
-
         res.writeHead(200, headers)
         return res.end(JSON.stringify(filterData))
       }

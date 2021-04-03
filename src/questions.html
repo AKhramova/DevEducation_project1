@@ -112,12 +112,12 @@
         </div>
         <div class="input-question">
           <label for="" class="input-question__field">
-            <textarea name="comment" rows="3" class="input-question__field-text" placeholder="Question.."></textarea>
+            <textarea id="writeQuestion" name="comment" rows="3" class="input-question__field-text"
+              placeholder="Question.."></textarea>
           </label>
         </div>
         <div class="select">
-          <select name="Choose-theme" id="" class="select__theme">
-            <option value="">Select one theme</option>
+          <select name="Choose-theme" id="selectTheme" class="select__theme">
             <option value="HTML">HTML</option>
             <option value="CSS">CSS</option>
             <option value="JS">JS</option>
@@ -128,10 +128,10 @@
           <form>
             <div class="choose-answer__group">
               <label for="answerTrue" class="choose-answer__group-true label-group">True
-                <input type="radio" id="answerTrue" name="answer" value="true">
+                <input class="answer-radio" type="radio" id="answerTrue" name="answer" value="true" checked>
               </label>
               <label for="answerFalse" class="choose-answer__group-false label-group">False
-                <input type="radio" id="answerFalse" name="answer" value="false">
+                <input class="answer-radio" type="radio" id="answerFalse" name="answer" value="false">
               </label>
             </div>
           </form>
