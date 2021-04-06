@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
     filter('#file-system', 'file_filter');
   } else if (window.location.pathname === '/about.html') {
     // страница about; 
-    } else if (window.location.pathname === '/index.html') {
+    } else if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
     // страница about; 
     homePageModule();
   }
