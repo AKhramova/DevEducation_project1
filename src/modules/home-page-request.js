@@ -54,7 +54,6 @@ const homeModule = () => {
         users[currentId].hobby = hobby.value;
         let jsonNew = JSON.stringify(users, null, 2);
 
-        console.log(currentId, users);
         const postRequest = new XMLHttpRequest();
         postRequest.open('POST', 'http://localhost:3000/team', true);
         postRequest.setRequestHeader('Content-type', 'application/json; charset=utf-8');
@@ -71,7 +70,7 @@ const homeModule = () => {
             }
         })
     })
-console.log(users);
+
     function req() {
         const request = new XMLHttpRequest();
         request.open('GET', 'http://localhost:3000/team', true);
@@ -85,7 +84,7 @@ console.log(users);
                     return;
                 }
                 render(data[0]);
-                currentId = data[0].id;
+                currentId = 0;
                 previousPhoto.classList.add('visible');
             } else {
                 console.error('error');
