@@ -1,26 +1,18 @@
-var xml2js = require('xml2js'),
-  fs = require('fs')
+var XMLparser = require('fast-xml-parser');
 
+function convertToXML(array) {
+  var result = '<questions>'
+  for (var i = 0; i < array.length; i++) {
+    var wrapper = '<question>';
+    for (var key in array[i]) {
+      wrapper += `<${key}>${array[i][key]}</${key}>`
+    }
+    result += wrapper + '</question>';
+  }
 
-function writeXml() {
-  var obj = [{ name: "Super", surname: "Man", age: 23 }, { name: "Super", surname: "Man", age: 23 }];
-
-  var builder = new xml2js.Builder();
-  var xml = builder.buildObject(obj);
-
-  fs.writeFileSync('./xml.xml', xml)
+  result += '</questions>'
+  return result;
 }
 
-// writeXml()
 
-
-function readXml() {
-  var parser = new xml2js.Parser()
-  fs.readFile(__dirname + '/xml.xml', (err, data) => {
-    parser.parseString(data, (err, result) => {
-      console.log(result)
-    })
-  })
-}
-
-readXml()
+var a = XMLparser(fs.readFileSync('questions/questions.xml', 'utf-8'))

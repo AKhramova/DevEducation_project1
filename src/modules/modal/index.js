@@ -1,39 +1,27 @@
-import api from './api'
-// !!!!!!!!!Сделать валидацию!!!!!!!!!!!
+import sendQuestion from './sendQuestion'
+import validation from './validation'
+
 export default function setQuestion() {
   var writeQuestion = document.querySelector('#writeQuestion'),
     selectTheme = document.querySelector('#selectTheme'),
     answer = document.querySelectorAll('.answer-radio'),
     fileSystem = document.querySelectorAll('.checkBox__choose-input'),
-    createQuestion = document.querySelector('#create-modal-new-question'),
+    createQuestion = document.getElementById('create-modal-new-question'),
     addNewQuestion = document.getElementById('new-question'),
     modalNewQuestion = document.getElementById('new-question-modal'),
     cancelNewQuestion = document.getElementById('cancel-modal-new-question'),
     closeNewQuestion = document.getElementById('close-modal-new-question')
 
-  createQuestion.addEventListener('click', function () {
-    var question = {
-      id: null,
-      text: null,
-      answer: null,
-      theme: null,
-      formats: null
-    }
-    var formats = []
-    question.id = new Date().getTime()
-    question.text = writeQuestion.value
-    question.theme = selectTheme.value
-    for (var i = 0; i < answer.length; i++) {
-      if (answer[i].checked) question.answer = answer[i].value
-    }
-    for (var i = 0; i < fileSystem.length; i++) {
-      if (fileSystem[i].checked) formats.push(fileSystem[i].value)
-    }
-    question.formats = formats
-
-    api.postAndDeleteRequest('/questions', question)
-    closePopup(modalNewQuestion)
+  sendQuestion({
+    createBtn: createQuestion,
+    textArea: writeQuestion,
+    select: selectTheme,
+    closeFunc: closePopup,
+    modal: modalNewQuestion,
+    answer,
+    fileSystem
   })
+  validation(createQuestion, writeQuestion, fileSystem)
 
   addNewQuestion.addEventListener('click', function () {
     openPopup(modalNewQuestion);
@@ -69,6 +57,11 @@ export default function setQuestion() {
   function closePopup(element) {
     element.classList.add('hidden');
     writeQuestion.value = ''
+    for (var i = 0; i < fileSystem.length; i++) {
+      if (fileSystem.value !== localStorage.getItem('file_filter')) {
+        fileSystem[i].checked = false
+      }
+    }
   }
   function exitOnEscape(event, element) {
     if (event.keyCode === 27) {
