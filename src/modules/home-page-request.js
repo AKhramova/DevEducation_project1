@@ -52,9 +52,6 @@ const homeModule = () => {
         users[currentId].yo = yo.value;
         users[currentId].dateOfBirth = dateOfBirth.value;
         users[currentId].hobby = hobby.value;
-        // const users = [
-        //     ...data
-        // ];
         let jsonNew = JSON.stringify(users, null, 2);
 
         console.log(currentId, users);
@@ -90,7 +87,6 @@ console.log(users);
                 render(data[0]);
                 currentId = data[0].id;
                 previousPhoto.classList.add('visible');
-                // console.log(data[0].id)
             } else {
                 console.error('error');
             }
