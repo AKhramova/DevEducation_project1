@@ -1,4 +1,35 @@
 var XMLparser = require('fast-xml-parser');
+var fs = require('fs')
+var data = [
+  {
+    "id": 1617809895641,
+    "text": "asdasda",
+    "answer": "true",
+    "theme": "HTML",
+    "formats": [
+      "JSON"
+    ]
+  },
+  {
+    "id": 1617809878594,
+    "text": "asdasdasd",
+    "answer": "true",
+    "theme": "HTML",
+    "formats": [
+      "JSON"
+    ]
+  },
+  {
+    "id": 1617809682237,
+    "text": "sadasd",
+    "answer": "true",
+    "theme": "HTML",
+    "formats": [
+      "JSON"
+    ]
+  }
+]
+
 
 function convertToXML(array) {
   var result = '<questions>'
@@ -9,10 +40,13 @@ function convertToXML(array) {
     }
     result += wrapper + '</question>';
   }
-
   result += '</questions>'
-  return result;
+
+  fs.writeFileSync(__dirname + '/xml.xml', result)
 }
+// convertToXML(data)
 
 
-var a = XMLparser(fs.readFileSync('questions/questions.xml', 'utf-8'))
+
+var a = XMLparser(fs.readFileSync(__dirname + '/xml.xml', 'utf-8'))
+console.log(a)
