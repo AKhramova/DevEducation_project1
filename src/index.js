@@ -2,7 +2,8 @@ import './styles/styles.scss';
 import filter from './modules/filter';
 import homePageModule from './modules/home-page-request';
 import questionsPageModule from './modules/questions';
-import { render } from './modules/filter'
+import render from './modules/render/render';
+import setQuestion from './modules/modal';
 
 
 
@@ -14,11 +15,11 @@ window.addEventListener('DOMContentLoaded', () => {
       document.body.classList.remove('loaded__hiding');
     }, 500);
   }
-  // Тут вызываем все модули
   if (window.location.pathname === '/questions.html') {
     questionsPageModule();
     filter();
     render();
+    setQuestion()
   } else if (window.location.pathname === '/about.html') {
     // страница about; 
   } else if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
