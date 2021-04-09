@@ -1,8 +1,7 @@
 var createCsvWriter = require('csv-writer').createObjectCsvWriter
 var csv = require('csv-parser')
 var fs = require('fs')
-var { json } = require('body-parser')
-var jsonParser = json()
+
 
 function readCsv(res, path, headers) {
   var results = []

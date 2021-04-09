@@ -1,8 +1,10 @@
-import './styles/styles.scss'
+import './styles/styles.scss';
 import filter from './modules/filter';
 import homePageModule from './modules/home-page-request';
 import questionsPageModule from './modules/questions';
 import { render } from './modules/filter'
+
+
 
 window.addEventListener('DOMContentLoaded', () => {
   window.onload = function () {
@@ -23,5 +25,4 @@ window.addEventListener('DOMContentLoaded', () => {
     // страница about; 
     homePageModule();
   }
-
 })

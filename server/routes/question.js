@@ -5,7 +5,6 @@ function question({ req, res, headers, dir }) {
   var query = new URLSearchParams(parseUrl)
 
   if (req.method === "GET") {
-
     switch (req.url) {
       case `/questions?file=json&theme=${query.get('theme')}`:
         read(res, dir + '/data/questions.json', headers, query)
@@ -22,7 +21,6 @@ function question({ req, res, headers, dir }) {
       default: req.url
     }
   }
-
 
   if (req.url === '/questions' && req.method === 'POST') {
     if (req.url === '/questions') {

@@ -19,7 +19,7 @@ var server = http.createServer(function (req, res) {
     return
   }
 
-  jsonParser(req, res, (err) => {
+  jsonParser(req, res, function (err) {
     if (err) throw err
     var routesParams = { req, res, headers, dir: __dirname }
     team(routesParams)
