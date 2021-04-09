@@ -1,7 +1,6 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "",
   "main": "app.js",
   "scripts": {
     "start": "nodemon ./app.js"
@@ -17,5 +16,6 @@
     "csv-writer": "^1.6.0",
     "xml-js": "^1.6.11",
     "xml2js": "^0.4.23"
-  }
+  },
+  "description": ""
 }
