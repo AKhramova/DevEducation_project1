@@ -41,4 +41,4 @@ export default modal;
 //             if(fileSystem[i].checked){
 //                 isChecked = true;
 //             }
-//     }
+// }
