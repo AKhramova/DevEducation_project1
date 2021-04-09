@@ -52,7 +52,7 @@ export function render(){
           <div class="question">
             <div class="question__text" id="question">${data[i].question}
              <div class="question__text-box" ></div>
-          </div>
+            </div>
             <div class="question__answer">
               <div class="question__answer-key">Answer</div>
               <div class="question__answer-value">${data[i].answer}</div>
@@ -62,12 +62,10 @@ export function render(){
               <div class="question__theme-key">Theme</div>
               <div class="question__theme-value">${data[i].theme}</div>
             </div>
-            </div>
+          </div>
         `
            }
-           
             document.querySelector('.question-list__container').innerHTML = render;
-
       } else if(data.length === 0){
         document.querySelector('.question-list__container').innerHTML =   `
         <p class="question-list__message">
