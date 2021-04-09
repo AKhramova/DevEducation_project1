@@ -20,7 +20,7 @@ export default function filter() {
 
   fileFilter.addEventListener('change', function (e) {
     localStorage.setItem(fileName, e.target.value)
-    //вместо запроса надо сделать рендер функцию
+    // TO FIX вместо запроса надо сделать рендер функцию
     api.getRequest(`/questions?file=${e.target.value}&theme=${themeFilter.value}`)
       .then(data => console.log(data))
   })

@@ -2,12 +2,12 @@ var api = {
   url: "http://localhost:3000",
 
   getRequest(route) {
-    return new Promise(function (responce, reject) {
+    return new Promise(function (response, reject) {
       var request = new XMLHttpRequest()
       request.open('GET', this.url + route, true)
       request.addEventListener("load", function () {
         if (request.status < 300) {
-          responce(request.response)
+          response(request.response)
         } else reject(new Error("Request failed: " + request.statusText))
       })
 
@@ -20,13 +20,15 @@ var api = {
   },
 
   postAndDeleteRequest(route, requestBody, method = 'POST') {
-    return new Promise(function (responce, reject) {
+    return new Promise(function (response, reject) {
       var request = new XMLHttpRequest();
       request.open(method, this.url + route, true)
       request.setRequestHeader("Content-Type", "application/json")
       request.addEventListener("load", function () {
-        if (request.status < 300) responce(request.responseText)
-        else fail(new Error("Request failed: " + request.statusText))
+        if (request.status < 200)
+          response(request.responseText)
+        else
+          reject(new Error("Request failed: " + request.statusText))
       })
 
       request.addEventListener("error", function () {

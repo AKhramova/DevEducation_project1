@@ -48,5 +48,5 @@ function convertToXML(array) {
 
 
 
-var a = XMLparser(fs.readFileSync(__dirname + '/xml.xml', 'utf-8'))
-console.log(a)
+var a = XMLparser.parse(fs.readFileSync(__dirname + '/xml.xml', 'utf-8'))
+console.log(a.questions)

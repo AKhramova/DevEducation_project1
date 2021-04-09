@@ -21,7 +21,7 @@ export default function sendQuestion({ createBtn, textArea, select, answer, file
     }
     question.formats = formats
 
-    api.postAndDeleteRequest('/questions', question)
+    api.postAndDeleteRequest('/questions', question, 'POST')
     closeFunc(modal)
   })
 }

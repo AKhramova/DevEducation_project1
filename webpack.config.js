@@ -74,11 +74,6 @@ const jsLoaders = () => {
         loader: 'babel-loader',
         options: babelOptions()
     }]
-
-    if (isDev) {
-        loaders.push('eslint-loader')
-    }
-
     return loaders
 }
 
@@ -110,14 +105,6 @@ const plugins = () => {
                 {
                     from: path.resolve(__dirname, 'src/img'),
                     to: path.resolve(__dirname, 'dist/img')
-                }
-            ]
-        ),
-        new CopyWebpackPlugin(
-            [
-                {
-                    from: path.resolve(__dirname, 'src/data'),
-                    to: path.resolve(__dirname, 'dist/data')
                 }
             ]
         ),
