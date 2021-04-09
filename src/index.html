@@ -8,6 +8,14 @@
   <title>Home</title>
 </head>
 <body>
+<!-- spiner нужно добавить каждой странице в html -->
+<div class="preloader">
+  <div class="preloader__row">
+    <div class="preloader__item"></div>
+    <div class="preloader__item"></div>
+  </div>
+</div>
+<!-- spiner -->
   <header class="header">
     <div class="container">
       <div class="header__content">
@@ -30,33 +38,29 @@
   </header>
 
   <main class="block-main">
-    <div id="next-photo" class="block-main__right">
-      →
-    </div>
-    <div id="previous-photo" class="block-main__left">
-      →
-    </div>
+    <div id="next-photo" class="block-main__right block-main__arrow">&rarr;</div>
+    <div id="previous-photo" class="block-main__left block-main__arrow">&larr;</div>
     <figure class="block-main__block-figure content">
       <div class="photo-container">
         <img id="team-photo" src="img/team/AlexM.jpg" class="content__photo-develop" alt="photo">
       </div>
       <section class="content__group information" id="team-mate-info">
-        <h6 class="information__name">
-          <input type="text" name="fullName" class="content__group-input" id="team-name" readonly="readonly">
+        <h6 class="information__name information__general">
+          <input type="text" name="fullName" class="content__group-input information__name-uppercase" id="team-name" readonly="readonly">
         </h6>
-        <p class="information__height">Height: 
+        <p class="information__height information__general">Height: 
           <input type="number" name="height" class="content__group-input" id="team-height" readonly="readonly">
         </p>
-        <p class="information__weight">Weight: 
+        <p class="information__weight information__general">Weight: 
           <input type="number" name="weight" class="content__group-input" id="team-weight" readonly="readonly">
         </p>
-        <p class="information__age">Age: 
+        <p class="information__age information__general">Age: 
           <input type="number" name="age" class="content__group-input" id="team-age" readonly="readonly">
         </p>
-        <p class="information__birthday">Birthday: 
+        <p class="information__birthday information__general">Birthday: 
           <input type="text" name="birthday" class="content__group-input" id="team-birthday" readonly="readonly">
         </p>
-        <p class="information__hobby">Hobbies: 
+        <p class="information__hobby information__general">Hobbies: 
           <input type="text" name="hobby" class="content__group-input" id="team-hobby" readonly="readonly">
         </p>
         <button class="information__edit information_general-button" id="information-edit">Edit</button>

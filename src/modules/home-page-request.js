@@ -1,21 +1,21 @@
-// const { template } = require("@babel/core");
-const homeModule = () => {
-    let pic = document.getElementById('team-photo');
-    let fullName = document.getElementById('team-name');
-    let height = document.getElementById('team-height');
-    let weight = document.getElementById('team-weight');
-    let yo = document.getElementById('team-age');
-    let dateOfBirth = document.getElementById('team-birthday');
-    let hobby = document.getElementById('team-hobby');
-    let nextPhoto = document.getElementById('next-photo');
-    let previousPhoto = document.getElementById('previous-photo');
-    let informationEdit = document.getElementById('information-edit');
-    let informationSave = document.getElementById('information-save');
-    let users;
-    let i = 0;
-    let data;
-    let currentId;
-
+// var { template } = require("@babel/core");
+var homeModule = function () {
+    var pic = document.getElementById('team-photo');
+    var fullName = document.getElementById('team-name');
+    var height = document.getElementById('team-height');
+    var weight = document.getElementById('team-weight');
+    var yo = document.getElementById('team-age');
+    var dateOfBirth = document.getElementById('team-birthday');
+    var hobby = document.getElementById('team-hobby');
+    var nextPhoto = document.getElementById('next-photo');
+    var previousPhoto = document.getElementById('previous-photo');
+    var informationEdit = document.getElementById('information-edit');
+    var informationSave = document.getElementById('information-save');
+    var users;
+    var i = 0;
+    var data;
+    var currentId;
+  
     nextPhoto.addEventListener('click', function() {
         if (i === data.length - 2) {
             nextPhoto.classList.add('visible');
@@ -52,9 +52,9 @@ const homeModule = () => {
         users[currentId].yo = yo.value;
         users[currentId].dateOfBirth = dateOfBirth.value;
         users[currentId].hobby = hobby.value;
-        let jsonNew = JSON.stringify(users, null, 2);
+        var jsonNew = JSON.stringify(users, null, 2);
 
-        const postRequest = new XMLHttpRequest();
+        var postRequest = new XMLHttpRequest();
         postRequest.open('POST', 'http://localhost:3000/team', true);
         postRequest.setRequestHeader('Content-type', 'application/json; charset=utf-8');
         postRequest.send(jsonNew);
@@ -64,7 +64,7 @@ const homeModule = () => {
                 saveInfo();
                 informationEdit.classList.remove('hidden');
                 informationSave.classList.add('hidden');  
-        
+                
             } else {
                 console.error('error');
             }
@@ -72,7 +72,7 @@ const homeModule = () => {
     })
 
     function req() {
-        const request = new XMLHttpRequest();
+        var request = new XMLHttpRequest();
         request.open('GET', 'http://localhost:3000/team', true);
         request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
         request.send();
@@ -125,7 +125,7 @@ const homeModule = () => {
         dateOfBirth.setAttribute('readonly', `readonly`);
         hobby.setAttribute('readonly', `readonly`);
     }
-
+  
 };
 
 export default homeModule;
