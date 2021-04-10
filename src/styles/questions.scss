@@ -1,9 +1,3 @@
-$body-color: #E2E4ED;
-$input-color: #EBECF0;
-$button-color: #d2d4dd;
-$question-color: #F0F1F6;
-$border-color: #8b8b8b;
-
 button:focus {
     outline: none;
 }
@@ -13,17 +7,10 @@ select:focus {
 .hidden {
     display: none;
 }
-
-.background {
-    position: fixed;
-    bottom: .5%;
-    left: .5%;
-}
 /* PANEL */
 .questions {
     min-height: calc(100vh - 174px);
     background: $body-color;
-
     &__panel {
         width: 100%;
         height: 110px;
@@ -42,7 +29,6 @@ select:focus {
         border: 1px solid $border-color;
         transition: .3s ease;
         cursor: pointer;
-
         &:hover {
             background-color: #fff;
         }
@@ -50,6 +36,11 @@ select:focus {
     &__container {
         width: 100%;
         padding: 0 40px;
+    }
+    &__background {
+        position: fixed;
+        bottom: .5%;
+        left: .5%;
     }
 }
 .dropdown {
@@ -78,7 +69,6 @@ select:focus {
         display: flex;
         flex-direction: column;
         align-items: center;
-
     }
     &__message {
         position: absolute;
@@ -90,11 +80,9 @@ select:focus {
         color: #000;
     }
 }
-
 /* QUESTION */
-
 .question {
-    margin: 20px 0;
+    margin: 0 0 30px;
     width: 44%;
     min-height: 268px;
     overflow: hidden;    
@@ -104,7 +92,6 @@ select:focus {
     background: $question-color;
     box-shadow: 5px 5px 5px rgb(200, 200, 200);
     font-size: .9em;
-
     &__text {
         display: flex;
         align-items: center;
@@ -120,7 +107,6 @@ select:focus {
             white-space: inherit;
         }
     }
-
     &__text-box {
         display: -webkit-box;
         -webkit-line-clamp: 3;
@@ -130,38 +116,33 @@ select:focus {
         text-overflow: ellipsis;
         overflow: hidden;
     }
-
     &:hover  .question__button {
         opacity: 1;
     }
-
     &__button {
         position: absolute;
-    top: 47%;
-    right: 41px;
-    width: 67px;
-    height: 65px;
-    border: none;
-    cursor: pointer;
-    background: url(/src/img/7.png) no-repeat;
-    opacity: 0;
-    transform: scale(0.5);
+        top: 47%;
+        right: 41px;
+        width: 67px;
+        height: 65px;
+        border: none;
+        cursor: pointer;
+        background: url(/src/img/7.png) no-repeat;
+        opacity: 0;
+        transform: scale(0.5);
     }
     &__answer {
         display: flex;
         flex-direction: row;
         height: 30px;
         margin: 20px 10% 0;
-        /* почему себя так ведет падинг? бордер внутри паддинга */
-        // padding: 5px;
         text-align: center;
         &-key,
         &-value {
             padding: 3px 0 0;
             width: 150px;
             border: 1px solid $border-color;
-            background: $input-color;
-            
+            background: $input-color;   
         }
     }
     &__theme {
@@ -192,32 +173,22 @@ select:focus {
     position: fixed;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     top: 0;
-    bottom: 0;
     left: 0;
-    right: 0;
-    margin: 0;
-    padding: 0;
-    /* opacity: 0;
-    visibility: hidden; */
     &__body {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-    
         width: 600px;
         height: 200px;
         border: 1px solid black;
-    
         background: $input-color;
-        z-index: 10000001;
     }
     &__text {
         font-size: 1.5em;
@@ -230,6 +201,7 @@ select:focus {
         width: 250px;
     }
 }
+/* POPUP */
 .popup-button {
     &__close {
         position: absolute;
@@ -277,4 +249,10 @@ select:focus {
             background: #fff;
         }
     }
+}
+.active {
+    background: rgba(112, 104, 226, 0.699);
+    border-radius: 4px;
+    padding: 4px 7px 7px 7px;
+    opacity: 0.95;
 }

@@ -7,13 +7,8 @@
   
 }
 
-.container{
-  max-width: 1140px;
-  margin: 0 auto;
-}
-
 .header__logo{
-  width: 80px;
+  width: 50px;
 }
 
 .header__content{
@@ -25,14 +20,20 @@
 .header__section{
   display: flex;
   justify-content:  space-evenly;
+  
 }
 
 .header__section_link{
   text-decoration: none;
   color: rgb(68, 65, 65);
+  padding: 4px 7px 7px 7px;
 }
 
 .header__section_link:hover{
-  background-color: #9696A3;
+  background-color: rgb(112, 104, 226);
   border-radius: 4px;
+  padding: 4px 7px 7px 7px;
+  
 }
+
+

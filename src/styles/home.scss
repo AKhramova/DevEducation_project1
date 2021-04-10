@@ -1,51 +1,179 @@
 .block-main{
   background: #EBECF0;
-  height: 95vh;
+  height: calc(100vh - 70px);
+  &__block-figure{
+    max-width: 90%;
+    margin: auto;
+    padding: 81px;
+    display: flex;
+  }
+  &__picture{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+    margin: 5% 40% 5% 50%;
+  }
+  &__arrow {
+    display: inline-block;
+    font-size: 30px;
+    margin-top: 22.5%;
+    cursor: pointer;
+  }
+  &__right{
+    margin-right: 3%;
+    padding: 15px;
+    float: right;
+    -webkit-transition: 0.5s ease-out;
+    &:hover {
+      transform: translateX(20px);
+      transition: .5s ease-in;
+    }
+  }
+  &__left{
+    margin-left: 3%;
+    padding: 15px;
+    float: left;
+    -webkit-transition: 0.5s ease-out;
+    &:hover {
+      transform: translateX(-20px);
+      transition: .5s ease-out;
+    }
+  }
 }
-.block-main__block-figure{
-  max-width: 80%;
-  margin: auto;
-  padding: 81px;
-  display: flex;
+.content {
+  &__photo-develop{
+    width: 100%;
+    height: auto;
+    margin:  10% 1%;
+  }
+  &__group{
+    width: 30%;
+    margin: 6% 3%;
+    &-input {
+      width: 100%;
+      height: 25px;
+      display: block;
+      background-color: inherit;
+      border: none;
+      font-size: 15px;
+      &::-webkit-outer-spin-button, 
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      &:focus {
+        outline: none;
+      }
+    }  
+    &-style {
+      width: 300px;
+      border-bottom: 1px solid black;
+    }
+  }
 }
-.content__photo-develop{
-  width: 25%;
-  height: 300px;
-  margin:  10% 1%;
+.photo-container {
+  width: 300px;
+  height: 450px;
+  overflow: hidden;
 }
-.content__group{
-  width: 25%;
-  margin: 15% 3%;
+.information {
+  &__general {
+    font-size: 15px;
+    line-height: 2;  
+  }
+  &__edit {
+    position: absolute;
+    margin: 2% 1%;
+    width: 160px;
+    height: 29px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 52.38%), #EBECF0;
+    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 2px rgba(0, 0, 0, 0.11);
+    cursor: pointer;
+    &:hover {
+      background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 52.38%), #EBECF0;
+    }
+  }
+  &__save {
+    position: absolute;
+    margin: 2% 1%;
+    width: 160px;
+    height: 29px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 52.38%), #EBECF0;
+    // box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 2px rgba(0, 0, 0, 0.11);
+    cursor: pointer;
+  }
+  &__name-uppercase {
+    font-weight: 900;
+    text-transform: uppercase;
+  } 
 }
-.information__name, .information__height, .information__weight,
-.information__age, .information__birthday, .information__hobby{
-  font-size: 15px;
-  line-height: 2;
+.hidden {
+  display: none;
 }
-.information__edit{
-  position: absolute;
-  margin: 5% 1%;
-  width: 160px;
-  height: 29px;
-  border-radius: 100px;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 52.38%), #EBECF0;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 2px rgba(0, 0, 0, 0.11);
+.visible {
+  visibility: hidden;
+} 
+
+// spiner
+.preloader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #e0e0e0;
+  z-index: 1001;
 }
-.block-main__picture{
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  margin: 5% 40%;
+.preloader {
+  &__row {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    width: 70px;
+    height: 70px;
+    margin-top: -35px;
+    margin-left: -35px;
+    text-align: center;
+    animation: preloader-rotate 2s infinite linear;
+  }
+  &__item {
+    position: absolute;
+    display: inline-block;
+    top: 0;
+    background-color: rgb(80,74,171);
+    border-radius: 100%;
+    width: 35px;
+    height: 35px;
+    animation: preloader-bounce 2s infinite ease-in-out;
+    &:last-child {
+      top: auto;
+      bottom: 0;
+      animation-delay: -1s;
+    }
+  }
 }
-div.block-main__right, div.block-main__left{
-  display: inline-block;
-  font-size: 30px;
-  margin: 20% 2%;
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
-.block-main__right{
-  float: right;
+@keyframes preloader-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+  }
 }
-.block-main__left{
-  transform: rotate(180deg);
-  float: left;
+.loaded__hiding .preloader {
+  transition: 5s opacity;
+  opacity: 0;
+}
+.loaded .preloader {
+  display: none;
 }

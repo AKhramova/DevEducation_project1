@@ -3,6 +3,11 @@
 /server/node_modules
 /server/package-lock.json
 package-lock.json
+
+# css
+src/styles/*.css
+src/styles/*.css.map
+
 # production
 /dist
 
