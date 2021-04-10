@@ -49,11 +49,11 @@ display: flex;
 flex-direction: column;
 margin-top: 30px;
   &__theme {
-      display: block;
-      width: 500px;
-      height: 35px;
-      margin-top: 5px;
-      margin: 0 auto;
+    display: block;
+    width: 500px;
+    height: 35px;
+    margin-top: 5px;
+    margin: 0 auto;
   }
 }
 .choose-answer {
@@ -61,25 +61,25 @@ display: flex;
 flex-direction: column;
 margin-top: 30px;
   &__group {
-      display: flex;
-      flex-direction: row;
-      margin-top: 10px;
-      justify-content: space-between;
-      width: 300px;
-      margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    justify-content: space-between;
+    width: 300px;
+    margin: 0 auto;
   }
 }
 .label-group {
-display: flex;
-flex-direction: row-reverse;
-justify-content: space-between;
-align-items: center;
-width: 60px;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  width: 60px;
 }
 .checkBox {
-display: flex;
-flex-direction: column;
-margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
   &__choose {
       display: flex;
       flex-direction: row;
@@ -87,13 +87,13 @@ margin-top: 30px;
       justify-content: space-around;
       width: 400px;
       &-label {
-          display: flex;
-          flex-direction: row-reverse;
-          justify-content: space-between;
-          align-items: center;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
       }
       &-input {
-          margin-right: 10px;
+        margin-right: 10px;
       }
   }
 }
@@ -109,10 +109,10 @@ margin-top: 30px;
   }
 }
 .buttons .btn{
-padding: 5px;
-width: 70px;
-text-transform: capitalize;
-border-radius: 100px;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 52.38%), #EBECF0;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), inset 2px 2px 2px rgba(0, 0, 0, 0.11);
+  position: static;
+  padding: 5px;
+  width: 70px;
 }
+
+
+

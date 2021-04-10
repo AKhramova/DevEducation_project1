@@ -1,4 +1,3 @@
-// var { template } = require("@babel/core");
 var homeModule = function () {
     var pic = document.getElementById('team-photo');
     var fullName = document.getElementById('team-name');
@@ -15,8 +14,8 @@ var homeModule = function () {
     var i = 0;
     var data;
     var currentId;
-  
-    nextPhoto.addEventListener('click', function() {
+
+    nextPhoto.addEventListener('click', function () {
         if (i === data.length - 2) {
             nextPhoto.classList.add('visible');
         } else {
@@ -26,23 +25,23 @@ var homeModule = function () {
         currentId = i;
         render(data[i]);
     })
-    previousPhoto.addEventListener('click', function() {
+    previousPhoto.addEventListener('click', function () {
         if (i === 1) {
             previousPhoto.classList.add('visible');
         } else {
             nextPhoto.classList.remove('visible');
         }
         --i;
-        currentId = i;       
+        currentId = i;
         render(data[i]);
     })
-    informationEdit.addEventListener('click', function() {
+    informationEdit.addEventListener('click', function () {
         addUnderline(data);
         editInfo(data);
         informationEdit.classList.add('hidden');
         informationSave.classList.remove('hidden');
     });
-    informationSave.addEventListener('click', function() {
+    informationSave.addEventListener('click', function () {
         users = [
             ...data
         ];
@@ -58,13 +57,13 @@ var homeModule = function () {
         postRequest.open('POST', 'http://localhost:3000/team', true);
         postRequest.setRequestHeader('Content-type', 'application/json; charset=utf-8');
         postRequest.send(jsonNew);
-        postRequest.addEventListener('load', function() {
+        postRequest.addEventListener('load', function () {
             if (postRequest.status === 200) {
                 addUnderline();
                 saveInfo();
                 informationEdit.classList.remove('hidden');
-                informationSave.classList.add('hidden');  
-                
+                informationSave.classList.add('hidden');
+
             } else {
                 console.error('error');
             }
@@ -76,8 +75,14 @@ var homeModule = function () {
         request.open('GET', 'http://localhost:3000/team', true);
         request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
         request.send();
+
+        document.body.classList.add('loaded__hiding');
+
+
         request.addEventListener('load', function () {
             if (request.status === 200) {
+                document.body.classList.add('loaded');
+                document.body.classList.remove('loaded__hiding');
                 data = JSON.parse(request.response);
                 if (data.length === 0) {
                     alert('Empty data');
@@ -93,13 +98,13 @@ var homeModule = function () {
     }
     req();
     function render(item) {
-            pic.src = item.photo;
-            fullName.value = item.fullName;
-            height.value = item.height;
-            weight.value = item.weight;
-            yo.value = item.yo;
-            dateOfBirth.value = item.dateOfBirth;
-            hobby.value = item.hobby;
+        pic.src = item.photo;
+        fullName.value = item.fullName;
+        height.value = item.height;
+        weight.value = item.weight;
+        yo.value = item.yo;
+        dateOfBirth.value = item.dateOfBirth;
+        hobby.value = item.hobby;
     }
     function addUnderline() {
         fullName.classList.toggle('content__group-style');
@@ -125,7 +130,7 @@ var homeModule = function () {
         dateOfBirth.setAttribute('readonly', `readonly`);
         hobby.setAttribute('readonly', `readonly`);
     }
-  
+
 };
 
 export default homeModule;

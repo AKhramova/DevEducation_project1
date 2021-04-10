@@ -80,20 +80,20 @@ const jsLoaders = () => {
 const plugins = () => {
     const base = [
         new HTMLWebpackPlugin({
-            template: './index.html',
+            template: './static/index.html',
             minify: {
                 collapseWhitespace: isProd
             }
         }),
         new HTMLWebpackPlugin({
-            template: './questions.html',
+            template: './static/questions.html',
             filename: './questions.html',
             minify: {
                 collapseWhitespace: isProd
             }
         }),
         new HTMLWebpackPlugin({
-            template: './about.html',
+            template: './static/about.html',
             filename: './about.html',
             minify: {
                 collapseWhitespace: isProd

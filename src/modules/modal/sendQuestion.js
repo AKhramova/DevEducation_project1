@@ -1,4 +1,5 @@
-import api from '../api'
+import { api } from '../support'
+import render from '../render/render'
 
 export default function sendQuestion({ createBtn, textArea, select, answer, fileSystem, closeFunc, modal }) {
   createBtn.addEventListener('click', function () {
@@ -9,6 +10,10 @@ export default function sendQuestion({ createBtn, textArea, select, answer, file
       theme: null,
       formats: null
     }
+
+    var fileFilter = localStorage.getItem('file_filter'),
+      themeFilter = localStorage.getItem('theme_filter')
+
     var formats = []
     question.id = new Date().getTime()
     question.text = textArea.value
@@ -22,6 +27,14 @@ export default function sendQuestion({ createBtn, textArea, select, answer, file
     question.formats = formats
 
     api.postAndDeleteRequest('/questions', question, 'POST')
+      .then(function () {
+        for (var i = 0; i < question.formats.length; i++) {
+          if (question.formats[i].toLowerCase() === fileFilter &&
+            (question.theme.toLowerCase() === themeFilter || themeFilter === 'all')) {
+            render()
+          }
+        }
+      }).catch(err => console.log(err))
     closeFunc(modal)
   })
 }

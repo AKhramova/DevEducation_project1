@@ -17,3 +17,17 @@ body {
 .d-flex{
   display: flex;
 }
+
+.btn{
+  position: absolute;
+  margin: 2% 1%;
+  width: 160px;
+  height: 29px;
+  border-radius: 5px;
+  border: 1px solid black;
+  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 52.38%), #EBECF0;
+  cursor: pointer;
+  &:hover {
+    background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 52.38%), #EBECF0;
+  }
+}

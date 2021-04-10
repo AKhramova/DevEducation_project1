@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <div class="header">
+  <header class="header">
     <div class="container">
       <div class="header__content">
         <img class="header__logo" src="img/team_b&w.png">
@@ -29,7 +29,7 @@
         </nav>
       </div>
     </div>
-  </div>
+  </header>
   </div>
   <div class="questions__panel">
     <div class="dropdown">
@@ -54,11 +54,11 @@
       <img src="/src/img/backgroung_boy.png" alt="man" class="questions__background">
       <div class="question-list">
         <div class="question-list__container questions-container">
-            <button id="delete-message" class="question__button"></button>
-          </div>
+
         </div>
       </div>
     </div>
+  </div>
   </div>
   <!-- POPUP -->
   <div id="delete-message-popup" class="popup hidden">
@@ -77,6 +77,7 @@
       </div>
     </div>
   </div>
+
   <!-- MODAL -->
   <div id="new-question-modal" class="popup hidden">
     <div class="new-question__backgroud">
@@ -88,7 +89,7 @@
         <div class="input-question">
           <label for="" class="input-question__field">
             <textarea id="writeQuestion" name="comment" rows="3" class="input-question__field-text"
-              placeholder="Question.."></textarea>
+              placeholder="Question..."></textarea>
           </label>
         </div>
         <div class="select">
@@ -144,6 +145,12 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="preloader">
+    <div class="preloader__row">
+      <div class="preloader__item"></div>
+      <div class="preloader__item"></div>
     </div>
   </div>
 </body>

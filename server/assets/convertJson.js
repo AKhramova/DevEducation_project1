@@ -46,9 +46,8 @@ function deleteQuestion(req, res, file, headers) {
     return endResponse(res, headers, { message: message.noObj })
   }
   var data = JSON.parse(fs.readFileSync(file, 'utf-8'))
-
   var afterDelete = data.filter(function (el) {
-    return el.id !== req.body.id
+    return el.id.toString() !== req.body.id
   })
 
   fs.writeFile(file, JSON.stringify(afterDelete), () => {
