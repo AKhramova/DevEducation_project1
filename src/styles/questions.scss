@@ -1,0 +1,280 @@
+$body-color: #E2E4ED;
+$input-color: #EBECF0;
+$button-color: #d2d4dd;
+$question-color: #F0F1F6;
+$border-color: #8b8b8b;
+
+button:focus {
+    outline: none;
+}
+select:focus {
+    outline: none;
+}
+.hidden {
+    display: none;
+}
+
+.background {
+    position: fixed;
+    bottom: .5%;
+    left: .5%;
+}
+/* PANEL */
+.questions {
+    min-height: calc(100vh - 174px);
+    background: $body-color;
+
+    &__panel {
+        width: 100%;
+        height: 110px;
+        padding: 0 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid $border-color;
+        background: linear-gradient(to bottom, #fff, $body-color);
+    }
+    &__button {
+        position: relative;
+        width: 16%;
+        height: 30px;
+        background: $button-color;
+        border: 1px solid $border-color;
+        transition: .3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #fff;
+        }
+    }
+    &__container {
+        width: 100%;
+        padding: 0 40px;
+    }
+}
+.dropdown {
+    width: 100%;
+    height: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    &__file-system, 
+    &__theme,
+    &__button {
+        width: 16%;
+        height: 30px;
+        background: $input-color;
+        text-align: center;
+    }
+}
+/* QUESTION LIST */
+.question-list {
+    position: relative;
+    width: auto;
+    min-height: calc(100vh - 200px);
+    &__container {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+    }
+    &__message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-size: 30px;
+        color: #000;
+    }
+}
+
+/* QUESTION */
+
+.question {
+    margin: 20px 0;
+    width: 44%;
+    min-height: 268px;
+    overflow: hidden;    
+    position: relative;
+    border: 1px solid black;
+    line-height: 1.5;
+    background: $question-color;
+    box-shadow: 5px 5px 5px rgb(200, 200, 200);
+    font-size: .9em;
+
+    &__text {
+        display: flex;
+        align-items: center;
+        width: 80%;
+        height: 84px;
+        margin: 36px auto 0;
+        border: 1px solid $border-color;
+        padding: 10px;
+        text-align: justify;
+        background: $input-color;
+        &:hover {
+            text-overflow: inherit;
+            white-space: inherit;
+        }
+    }
+
+    &__text-box {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        max-height: 60px;
+        line-height: 20px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    &:hover  .question__button {
+        opacity: 1;
+    }
+
+    &__button {
+        position: absolute;
+    top: 47%;
+    right: 41px;
+    width: 67px;
+    height: 65px;
+    border: none;
+    cursor: pointer;
+    background: url(/src/img/7.png) no-repeat;
+    opacity: 0;
+    transform: scale(0.5);
+    }
+    &__answer {
+        display: flex;
+        flex-direction: row;
+        height: 30px;
+        margin: 20px 10% 0;
+        /* почему себя так ведет падинг? бордер внутри паддинга */
+        // padding: 5px;
+        text-align: center;
+        &-key,
+        &-value {
+            padding: 3px 0 0;
+            width: 150px;
+            border: 1px solid $border-color;
+            background: $input-color;
+            
+        }
+    }
+    &__theme {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        width: 200px;
+        height: 25px;
+        margin: 40px 10% 0;
+        border: 1px solid $border-color;
+        background: $input-color;
+        padding: 0 5px;
+        &-key {
+            padding-right: 5px;
+        }
+        &-value {
+            padding: 0 5px;
+            width: 250px;
+            border-left: 1px solid $border-color;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+        }
+    }
+}
+/* POPUP */
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    /* opacity: 0;
+    visibility: hidden; */
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    
+        width: 600px;
+        height: 200px;
+        border: 1px solid black;
+    
+        background: $input-color;
+        z-index: 10000001;
+    }
+    &__text {
+        font-size: 1.5em;
+        margin-bottom: 30px;
+    }
+    &-group {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        width: 250px;
+    }
+}
+.popup-button {
+    &__close {
+        position: absolute;
+        top: 15%;
+        right: 5%;
+        width: 20px;
+        height: 20px;
+        background: none;
+        border: none;
+        transition: .3s ease;
+        cursor: pointer;
+        transform: translate(0, -50%) rotate(45deg);
+        background: $question-color;
+        &::before {
+            content: '';
+            width: 100%;
+            height: 3px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            margin-top: -2px;
+            background: black;
+        }
+        &::after {
+            content: '';
+            width: 3px;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            margin-left: -2px;
+            background: black;
+        }
+    }
+    &__confirm,
+    &__cancel {
+        width: 100px;
+        height: 30px;
+        text-align: center;
+        background: $button-color;
+        transition: .3s ease;
+
+        &:hover,
+        &:hover {
+            background: #fff;
+        }
+    }
+}
