@@ -74,31 +74,26 @@ const jsLoaders = () => {
         loader: 'babel-loader',
         options: babelOptions()
     }]
-
-    if (isDev) {
-        loaders.push('eslint-loader')
-    }
-
     return loaders
 }
 
 const plugins = () => {
     const base = [
         new HTMLWebpackPlugin({
-            template: './index.html',
+            template: './static/index.html',
             minify: {
                 collapseWhitespace: isProd
             }
         }),
         new HTMLWebpackPlugin({
-            template: './questions.html',
+            template: './static/questions.html',
             filename: './questions.html',
             minify: {
                 collapseWhitespace: isProd
             }
         }),
         new HTMLWebpackPlugin({
-            template: './about.html',
+            template: './static/about.html',
             filename: './about.html',
             minify: {
                 collapseWhitespace: isProd
@@ -110,14 +105,6 @@ const plugins = () => {
                 {
                     from: path.resolve(__dirname, 'src/img'),
                     to: path.resolve(__dirname, 'dist/img')
-                }
-            ]
-        ),
-        new CopyWebpackPlugin(
-            [
-                {
-                    from: path.resolve(__dirname, 'src/data'),
-                    to: path.resolve(__dirname, 'dist/data')
                 }
             ]
         ),

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questions</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header__content">
+        <img class="header__logo" src="img/team_b&w.png">
+        <div class="header__team-name">
+          DevFiksiki
+        </div>
+        <nav class="header__section">
+          <a class="header__section_link" href="index.html">
+            Home
+          </a>
+          <a class="header__section_link active" href="#">
+            Questions
+          </a>
+          <a class="header__section_link" href="about.html">
+            About
+          </a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  </div>
+  <div class="questions__panel">
+    <div class="dropdown">
+      <select name="file-system" id="file-system" class="dropdown__file-system">
+        <option value="csv">CSV</option>
+        <option value="json">JSON</option>
+        <option value="xml">XML</option>
+        <option value="yaml">YAML</option>
+      </select>
+      <select name="questions-theme" id="questions-theme" class="dropdown__theme">
+        <option value="all">All themes</option>
+        <option value="html">HTML</option>
+        <option value="css">CSS</option>
+        <option value="js">JS</option>
+        <option value="react">React</option>
+      </select>
+      <button id="new-question" class="dropdown__button questions__button">Add question</button>
+    </div>
+  </div>
+  <div class="questions">
+    <div class="question__container">
+      <img src="/src/img/backgroung_boy.png" alt="man" class="questions__background">
+      <div class="question-list">
+        <div class="question-list__container questions-container">
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- POPUP -->
+  <div id="delete-message-popup" class="popup hidden">
+    <div class="popup__body">
+      <div class="popup__content">
+        <div id="closePopUp" class="popup-button">
+          <button id="closePU" class="popup-button__close"></button>
+        </div>
+        <div class="popup__text">
+          <p>Are you sure you want to delete this question?</p>
+        </div>
+        <div class="popup-group">
+          <button id="confirm-delete-question" class="popup-button__confirm popup-group__style">Confirm</button>
+          <button id="cancel-delete-question" class="popup-button__cancel popup-group__style">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="new-question-modal" class="popup hidden">
+    <div class="new-question__backgroud">
+      <div class="modal">
+        <div class="close">
+          <button id="close-modal-new-question" type="button" class="close__modal" data-dismiss="modal"
+            aria-hidden="true">&times;</button>
+        </div>
+        <div class="input-question">
+          <label for="" class="input-question__field">
+            <textarea id="writeQuestion" name="comment" rows="3" class="input-question__field-text"
+              placeholder="Question..."></textarea>
+          </label>
+        </div>
+        <div class="select">
+          <select name="Choose-theme" id="selectTheme" class="select__theme">
+            <option value="HTML">HTML</option>
+            <option value="CSS">CSS</option>
+            <option value="JS">JS</option>
+            <option value="REACT">REACT</option>
+          </select>
+        </div>
+        <div class="choose-answer">
+          <form>
+            <div class="choose-answer__group">
+              <label for="answerTrue" class="choose-answer__group-true label-group">True
+                <input class="answer-radio" type="radio" id="answerTrue" name="answer" value="true" checked>
+              </label>
+              <label for="answerFalse" class="choose-answer__group-false label-group">False
+                <input class="answer-radio" type="radio" id="answerFalse" name="answer" value="false">
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="checkBox">
+          <div class="checkBox__choose">
+            <div>
+              <label for="CSV" class="checkBox__choose-label">CSV
+                <input type="checkbox" id="CSV" name="FileSystem" value="CSV" class="checkBox__choose-input">
+              </label>
+            </div>
+            <div>
+              <label for="JSON" class="checkBox__choose-label">JSON
+                <input type="checkbox" id="JSON" name="FileSystem" value="JSON" class="checkBox__choose-input">
+              </label>
+            </div>
+            <div>
+              <label for="XML" class="checkBox__choose-label">XML
+                <input type="checkbox" id="XML" name="FileSystem" value="XML" class="checkBox__choose-input">
+              </label>
+            </div>
+            <div>
+              <label for="YAML" class="checkBox__choose-label">YAML
+                <input type="checkbox" id="YAML" name="FileSystem" value="YAML" class="checkBox__choose-input">
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="buttons">
+          <div class="buttons__group">
+            <button id="cancel-modal-new-question" type="button" class="buttons__group-cancel btn"
+              data-dismiss="modal">cancel</button>
+            <button id="create-modal-new-question" type="button" class="buttons__group-create btn"
+              disabled>create</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="preloader">
+    <div class="preloader__row">
+      <div class="preloader__item"></div>
+      <div class="preloader__item"></div>
+    </div>
+  </div>
+</body>
+
+</html>
