@@ -10,7 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
     filter();
     render();
     setQuestion();
-    deleteQuestions()
+    deleteQuestions();
   }
   else if (window.location.pathname === '/about.html') {
     // страница about; 
