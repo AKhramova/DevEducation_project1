@@ -31,3 +31,19 @@ body {
     background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 52.38%), #EBECF0;
   }
 }
+
+@media (min-width:1440px){
+  .container {
+    max-width: 1240px;
+  }
+}
+@media (min-width:1600px){
+  .container {
+    max-width: 1340px;
+  }
+}
+@media (min-width:1920px){
+  .container {
+    max-width: 1540px;
+  }
+}
