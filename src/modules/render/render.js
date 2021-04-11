@@ -27,12 +27,12 @@ export default function render() {
                 <div class="question__theme-key">Theme</div>
                 <div class="question__theme-value">${data[i].theme}</div>
               </div>
-              <div class="question__theme">${date(data[i].id)}</div>
+              <div class="question__theme">${date(+data[i].id)}</div>
             </div>
-
           </div>
           `
         }
+
         return questionContainer.innerHTML = render;
       }
       return questionContainer.innerHTML =

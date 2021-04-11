@@ -6,18 +6,11 @@ import setQuestion from './modules/modal';
 import deleteQuestions from './modules/deleteQuestion';
 
 window.addEventListener('DOMContentLoaded', () => {
-  // window.onload = function () {
-  //   document.body.classList.add('loaded__hiding');
-  //   window.setTimeout(function () {
-  //     document.body.classList.add('loaded');
-  //     document.body.classList.remove('loaded__hiding');
-  //   }, 500);
-  // }
   if (window.location.pathname === '/questions.html') {
     filter();
     render();
     setQuestion();
-    deleteQuestions()
+    deleteQuestions();
   }
   else if (window.location.pathname === '/about.html') {
     // страница about; 
