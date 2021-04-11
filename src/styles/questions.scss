@@ -48,7 +48,7 @@ select:focus {
     height: 50px;
     position: relative;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     &__file-system, 
     &__theme,
@@ -57,6 +57,9 @@ select:focus {
         height: 30px;
         background: $input-color;
         text-align: center;
+        &:hover{
+            cursor: pointer;
+        }
     }
 }
 /* QUESTION LIST */
