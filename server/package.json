@@ -15,8 +15,8 @@
     "csv-parser": "^3.0.0",
     "csv-writer": "^1.6.0",
     "fast-xml-parser": "^3.19.0",
-    "xml-js": "^1.6.11",
-    "xml2js": "^0.4.23"
+    "js-yaml": "^4.0.0",
+    "json-to-pretty-yaml": "^1.2.2"
   },
   "description": ""
 }
