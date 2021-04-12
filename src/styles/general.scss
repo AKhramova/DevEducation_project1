@@ -25,9 +25,9 @@ body {
   height: 29px;
   border-radius: 5px;
   border: 1px solid black;
-  background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 52.38%), #EBECF0;
+  background: linear-gradient(180deg, $gradient-start 0%, $gradient-end 52.38%), $background-color;
   cursor: pointer;
   &:hover {
-    background: linear-gradient(0deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 52.38%), #EBECF0;
+    background: linear-gradient(0deg, $gradient-start 0%, $gradient-end 52.38%), $background-color;
   }
 }
