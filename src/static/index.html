@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+</head>
+
+<body>
+  <!-- spiner -->
+  <header class="header">
+    <div class="container">
+      <div class="header__content">
+        <a href="#" class="logo">
+          <img class="header__logo" src="img/team_b&w.png">
+          <div class="header__team-name">
+            DevFiksiki
+          </div>
+        </a>
+        <nav class="header__section">
+          <a class="header__section_link active" href="#">
+            Home
+          </a>
+          <a class="header__section_link" href="questions.html">
+            Questions
+          </a>
+          <a class="header__section_link" href="about.html">
+            About
+          </a>
+        </nav>
+      </div>
+  </header>
+
+  <main class="block-main">
+    <div id="next-photo" class="block-main__right block-main__arrow">&rarr;</div>
+    <div id="previous-photo" class="block-main__left block-main__arrow">&larr;</div>
+    <figure class="block-main__block-figure content container">
+      <div class="photo-container">
+        <img id="team-photo" src="img/team/AlexM.jpg" class="content__photo-develop" alt="photo">
+      </div>
+      <section class="content__group information" id="team-mate-info">
+        <h6 class="information__name information__general">
+          <input type="text" name="fullName" class="content__group-input information__name-uppercase" id="team-name"
+            readonly="readonly">
+        </h6>
+        <p class="information__height information__general">Height:
+          <input type="number" name="height" class="content__group-input" id="team-height" readonly="readonly">
+        </p>
+        <p class="information__weight information__general">Weight:
+          <input type="number" name="weight" class="content__group-input" id="team-weight" readonly="readonly">
+        </p>
+        <p class="information__age information__general">Age:
+          <input type="number" name="age" class="content__group-input" id="team-age" readonly="readonly">
+        </p>
+        <p class="information__birthday information__general">Birthday:
+          <input type="text" name="birthday" class="content__group-input" id="team-birthday" readonly="readonly">
+        </p>
+        <p class="information__hobby information__general">Hobbies:
+          <input type="text" name="hobby" class="content__group-input" id="team-hobby" readonly="readonly">
+        </p>
+        <button class="information__edit information_general-button" id="information-edit">Edit</button>
+        <button class="information__save hidden" id="information-save">Save</button>
+      </section>
+      <img src="img/man_with_computer.svg" alt="man_with_computer" class="block-main__picture">
+    </figure>
+
+  </main>
+  <div class="preloader">
+    <div class="preloader__row">
+      <div class="preloader__item"></div>
+      <div class="preloader__item"></div>
+    </div>
+  </div>
+</body>
+
+</html>

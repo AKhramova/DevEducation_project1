@@ -4,11 +4,8 @@
   "description": "Создать приложение  для тестирования знаний разработчиков.\r Приложение должно содержать три страницы (навигационная панель => HOME, QUESTIONS, ABOUT; header => название команды и логотип.). По дефолту открывается страница HOME.\r На странице HOME необходимо вывести информацию об участниках команды, в виде карточек разработчика. В карточке должны быть следующие данные:\r -Avatar (фото разработчика);\r -Main info (возраст, рост, вес и т.д. Не менее 5ти параметров)\r -Hobbie (2, 3 предложения);\r \tРеализовать возможность изменения данных (EDIT). Все данные разработчиков необходимо загружать с файла developers.json, все возможные модификации данных \r напрямую сохраняются в этот файл. \r Страница QUESTIONS должна включать топ бар с логотипом и названием команды, навигацию по сайту, фильтрацию по файловой системе (select),\r фильтрацию по теме вопроса (select), кнопку добавить вопрос, список вопросов.",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
-    "stats": "webpack --json > stats.json && webpack-bundle-analyzer stats.json"
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
   },
   "author": "",
   "license": "ISC",
@@ -29,8 +26,6 @@
     "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^6.0.3",
     "css-loader": "^3.4.2",
-    "eslint": "^6.8.0",
-    "eslint-loader": "^3.0.3",
     "file-loader": "^5.0.2",
     "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.9.0",
