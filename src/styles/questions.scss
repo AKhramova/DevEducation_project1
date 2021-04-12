@@ -84,6 +84,19 @@ select:focus {
         text-align: center;
         font-size: 30px;
         color: #000;
+        letter-spacing: 4px;
+        animation: text 5s 1;
+    }
+}
+@keyframes text{
+    0%{
+        color: rgba(112, 104, 226, 0.699);
+    }
+    30%{
+        letter-spacing: 15px;
+    }
+    85%{
+        letter-spacing: 4px;
     }
 }
 /* QUESTION */
