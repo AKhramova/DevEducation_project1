@@ -23,11 +23,6 @@ select:focus {
     }
     &__button {
         position: relative;
-        width: 16%;
-        height: 30px;
-        background: $button-color;
-        border: 1px solid $border-color;
-        transition: .3s ease;
         cursor: pointer;
         &:hover {
             background-color: #fff;
@@ -50,10 +45,20 @@ select:focus {
     display: flex;
     justify-content: space-between;
     align-items: center;
+     /* &__theme-name,
+      &__file-name{
+       font-weight: bold;
+       font-size: 14px;
+      }*/
+    &__file-system, 
+    &__theme{
+        margin-right: 17%;
+    }
     &__file-system, 
     &__theme,
     &__button {
-        width: 16%;
+       // width: 16%;
+       width: 11%;
         height: 30px;
         background: $input-color;
         text-align: center;
@@ -82,7 +87,7 @@ select:focus {
         font-size: 30px;
         color: #000;
         letter-spacing: 4px;
-        animation: text 5s 1;
+        animation: text 3s 1;
     }
 }
 @keyframes text{
