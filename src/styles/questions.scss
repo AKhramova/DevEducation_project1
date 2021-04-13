@@ -35,11 +35,11 @@ select:focus {
     }
     &__container {
         width: 100%;
-        padding: 0 40px;
+        
     }
     &__background {
         position: fixed;
-        bottom: .5%;
+        bottom: -10%;
         left: .5%;
     }
 }

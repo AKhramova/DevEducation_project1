@@ -25,7 +25,7 @@ export default function sendQuestion({ createBtn, textArea, select, answer, file
       if (fileSystem[i].checked) formats.push(fileSystem[i].value)
     }
     question.formats = formats
-
+    this.disabled = true
     api.postAndDeleteRequest('/questions', question, 'POST')
       .then(function () {
         for (var i = 0; i < question.formats.length; i++) {
