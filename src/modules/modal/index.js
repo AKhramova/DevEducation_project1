@@ -57,6 +57,7 @@ export default function setQuestion() {
   function closePopup(element) {
     element.classList.add('hidden');
     writeQuestion.value = ''
+    createQuestion.disabled = true
     for (var i = 0; i < fileSystem.length; i++) {
       if (fileSystem.value !== localStorage.getItem('file_filter')) {
         fileSystem[i].checked = false
