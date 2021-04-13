@@ -1,13 +1,9 @@
 .header{
-  background:  linear-gradient(180deg, #FFFFFF 0%, 
-  rgba(255, 255, 255, 0) 100%), #CFD3E3;
+  background:  linear-gradient(180deg, $gradient-start 0%, $gradient-end 100%), $header-background;
   font-family:'Gill Sans', 'Gill Sans MT',
   Calibri, 'Trebuchet MS', sans-serif;
   font-size: 19px;
-  
 }
-
-
 
 .header__logo{
   width: 50px;
@@ -25,26 +21,22 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: #000;
+  color: $modal-background;
 }
 
 .header__section{
   display: flex;
-  justify-content:  space-between;
-  
+  justify-content:  space-evenly;
 }
 
 .header__section_link{
   text-decoration: none;
-  color: rgb(68, 65, 65);
+  color: $header-link;
   padding: 4px 7px 7px 7px;
 }
 
 .header__section_link:hover{
-  background-color: rgb(112, 104, 226);
+  background-color: $header-hover;
   border-radius: 4px;
   padding: 4px 7px 7px 7px;
-  
 }
-
-
