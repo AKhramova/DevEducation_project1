@@ -10,12 +10,16 @@ var homeModule = function () {
     var previousPhoto = document.getElementById('previous-photo');
     var informationEdit = document.getElementById('information-edit');
     var informationSave = document.getElementById('information-save');
+    var contentGroupInput = document.querySelectorAll('.content__group-input');
     var users;
     var i = 0;
     var data;
     var currentId;
 
     nextPhoto.addEventListener('click', function () {
+        if (i >= 7) {
+            return;
+        }
         if (i === data.length - 2) {
             nextPhoto.classList.add('visible');
         } else {
@@ -26,6 +30,9 @@ var homeModule = function () {
         render(data[i]);
     })
     previousPhoto.addEventListener('click', function () {
+        if (i <= 0) {
+            return;
+        }
         if (i === 1) {
             previousPhoto.classList.add('visible');
         } else {
@@ -40,8 +47,12 @@ var homeModule = function () {
         editInfo(data);
         informationEdit.classList.add('hidden');
         informationSave.classList.remove('hidden');
+        cursorTextHandler();
     });
     informationSave.addEventListener('click', function () {
+        if (!inputsValidation(data)) {
+            return;
+        }
         users = [
             ...data
         ];
@@ -68,6 +79,7 @@ var homeModule = function () {
                 console.error('error');
             }
         })
+        cursorDefaultHandler();
     })
 
     function req() {
@@ -77,7 +89,6 @@ var homeModule = function () {
         request.send();
 
         document.body.classList.add('loaded__hiding');
-
 
         request.addEventListener('load', function () {
             if (request.status === 200) {
@@ -130,7 +141,48 @@ var homeModule = function () {
         dateOfBirth.setAttribute('readonly', `readonly`);
         hobby.setAttribute('readonly', `readonly`);
     }
-
+    function inputsValidation() {
+        var isValid = true;
+        var birthDatePattern = /^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[012])\.(19|20)\d\d$/;
+        
+        if (!fullName.value.length || fullName.value.length > 30) {
+            fullName.classList.add('error');
+            isValid = false;
+        }
+        if (!height.value.length || height.value.length > 3) {
+            height.classList.add('error');
+            isValid = false;
+        }
+        if (!weight.value.length || weight.value.length > 3) {
+            weight.classList.add('error');
+            isValid = false;
+        }
+        if (!yo.value.length || yo.value.length > 3) {
+            yo.classList.add('error');
+            isValid = false;
+        }
+        if (!dateOfBirth.value.length || !birthDatePattern.test(dateOfBirth.value)) {
+            dateOfBirth.classList.add('error');
+            isValid = false;
+        }
+        if (!hobby.value.length || hobby.value.length > 100) {
+            hobby.classList.add('error');
+            isValid = false;
+        }
+        return isValid;
+    }
+    function cursorTextHandler() {
+        for (var gen of contentGroupInput) {
+            gen.classList.remove('cursor-default');
+            gen.classList.add('cursor-text');
+        }
+    }
+    function cursorDefaultHandler() {
+        for (var gen of contentGroupInput) {
+            gen.classList.remove('cursor-text');
+            gen.classList.add('cursor-default');
+        }
+    }
 };
 
 export default homeModule;
