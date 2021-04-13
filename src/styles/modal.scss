@@ -4,7 +4,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: $modal-background;
 }
 .modal {
   position: absolute;
@@ -17,8 +17,8 @@
   width: 600px;
   height: auto;
   border: none;
-  background-color: #EBECF0;
-  box-shadow: 2px 2px 5px rgb(200, 200, 200);
+  background-color: $background-color;
+  box-shadow: 2px 2px 5px $box-shadow;
 }
 .close {
 position: absolute;
@@ -28,7 +28,7 @@ right: 20px;
       border: none;
       transform: scale(2.3);
       &:hover {
-        color: rgb(67, 0, 93);
+        color: $cross-hover;
       }
   }
 }
@@ -113,6 +113,3 @@ margin-top: 30px;
   padding: 5px;
   width: 70px;
 }
-
-
-

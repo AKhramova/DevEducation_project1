@@ -2,10 +2,10 @@ export default function validation(createBtn, textArea, fileSystem) {
   var isChangedFs = true
 
   textArea.addEventListener('input', function () {
-    if (this.value !== '' && isChangedFs && this.value.length < 255) {
+    if (this.value.trim() !== '' && isChangedFs && this.value.length < 255) {
       createBtn.disabled = false
     }
-    else if (this.value === '' || !isChangedFs || this.value.length > 255) {
+    else if (this.value.trim() === '' || !isChangedFs || this.value.length > 255) {
       createBtn.disabled = true
     }
   })
