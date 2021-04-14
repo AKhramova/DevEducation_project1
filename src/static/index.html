@@ -44,21 +44,30 @@
         <h6 class="information__name information__general">
           <input type="text" name="fullName" class="content__group-input information__name-uppercase" id="team-name"
             readonly="readonly" minlength="3" maxlength="30">
+            <span class="textfield__error hidden">Check your full name</span>
         </h6>
+        <p id="team-role" class="information__role information__general">Developer</p>
+        <p class="information__section">MAIN INFO</p>
         <p class="information__height information__general">Height:
           <input type="number" name="height" class="content__group-input" id="team-height" readonly="readonly" minlength="1" maxlength="3">
+          <span class="textfield__error hidden">Check your height</span>
         </p>
         <p class="information__weight information__general">Weight:
           <input type="number" name="weight" class="content__group-input" id="team-weight" readonly="readonly" minlength="1" maxlength="3">
+          <span class="textfield__error hidden">Check your weight</span>
         </p>
         <p class="information__age information__general">Age:
           <input type="number" name="age" class="content__group-input" id="team-age" readonly="readonly"  minlength="1" maxlength="3">
+          <span class="textfield__error hidden">Check your age</span>
         </p>
         <p class="information__birthday information__general">Birthday:
           <input type="text" name="birthday" class="content__group-input" id="team-birthday" readonly="readonly" maxlength="10">
+          <span class="textfield__error hidden">Check your date of birth</span>
         </p>
-        <p class="information__hobby information__general">Hobbies:
+        <p class="information__section">HOBBIES</p>
+        <p class="information__hobby information__general">
           <input type="text" name="hobby" class="content__group-input" id="team-hobby" readonly="readonly"  minlength="1" maxlength="30">
+          <span class="textfield__error hidden">Check your hobby</span>
         </p>
         <button class="information__edit information_general-button" id="information-edit">Edit</button>
         <button class="information__save hidden" id="information-save">Save</button>
