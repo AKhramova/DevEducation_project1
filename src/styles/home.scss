@@ -49,8 +49,9 @@
   }
   &__group{
     width: 30%;
-    margin: 5% 3%;
+    margin: 4% 3%;
     &-input {
+      position: relative;
       width: 100%;
       height: 25px;
       display: block;
@@ -58,7 +59,7 @@
       border: none;
       font-size: 15px;
       cursor: default;
-
+      font-style: italic;
       &::-webkit-outer-spin-button, 
       &::-webkit-inner-spin-button {
         -webkit-appearance: none;
@@ -69,12 +70,11 @@
       }
 
       &.error {
-        border-color: $error-color;
+        border-color: $header-hover;
       }
     }  
-    &-style {
-      width: 300px;
-      border-bottom: 1px solid $modal-background;
+    &-style {      
+      border-bottom: 1px solid $button-color;
     }
   }
 }
@@ -86,10 +86,11 @@
 }
 .information {
   &__general {
+    position: relative;
+    width: 300px;
     font-size: 15px;
     line-height: 2; 
     cursor: default; 
-    font-style: italic;
   }
   &__edit {
     position: absolute;
@@ -117,11 +118,31 @@
   &__name-uppercase {
     font-weight: 900;
     text-transform: uppercase;
+    font-style: normal;
+    font-size: 18px;
   } 
+  &__role {
+    color: $header-link;
+  }
+  &__section {
+    padding-top: 20px;
+    width: 300px;
+    border-bottom: 1px solid $modal-background;
+  }
 }
 .cursor-text {
   cursor: text;
 }
 .cursor-default {
   cursor: default;
+}
+.textfield__error {
+  display: none;
+  position: absolute;
+  right: 0;
+  color: $error-color;
+  font-size: 12px;
+}
+.error + .textfield__error {
+  display: block;
 }
