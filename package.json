@@ -7,8 +7,7 @@
     "build": "cross-env NODE_ENV=production webpack --mode production",
     "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "server": "npm run start --prefix server",
-    "app": "concurrently \"npm run start\" \"npm run server\"",
-    "test": "jest"
+    "app": "concurrently \"npm run start\" \"npm run server\""
   },
   "author": "",
   "license": "ISC",
@@ -55,6 +54,5 @@
   "bugs": {
     "url": "https://github.com/AKhramova/DevEducation_project1/issues"
   },
-  "homepage": "https://github.com/AKhramova/DevEducation_project1#readme",
-  "keywords": []
+  "homepage": "https://github.com/AKhramova/DevEducation_project1#readme"
 }
