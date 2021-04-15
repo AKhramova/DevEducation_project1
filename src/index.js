@@ -1,6 +1,6 @@
 import './styles/styles.scss';
 import filter from './modules/filter';
-import homePageModule from './modules/home-page-request';
+import homeModule from './modules/home-page-request';
 import render from './modules/render/render';
 import setQuestion from './modules/modal';
 import deleteQuestions from './modules/deleteQuestion';
@@ -17,6 +17,6 @@ window.addEventListener('DOMContentLoaded', () => {
   }
   else if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
     // страница about; 
-    homePageModule();
+    homeModule();
   }
 })

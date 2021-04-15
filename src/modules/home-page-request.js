@@ -203,9 +203,6 @@ var homeModule = function () {
             gen.classList.add('cursor-default');
         }
     }
-    function errorHandler(element) {
-        element.classList.remove('error');
-    }
 };
 
 export default homeModule;
