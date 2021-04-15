@@ -130,6 +130,7 @@ select:focus {
         line-height: 20px;
         text-overflow: ellipsis;
         overflow: hidden;
+        word-wrap: break-word;
     }
     &:hover  .question__button {
         opacity: 1;
@@ -184,6 +185,14 @@ select:focus {
     }
 }
 /* POPUP */
+@keyframes showBlock {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 .popup {
     position: fixed;
     width: 100%;
@@ -191,6 +200,8 @@ select:focus {
     background-color: $modal-background;
     top: 0;
     left: 0;
+    visibility: visible;
+    animation: showBlock .2s linear forwards;
     &__body {
         display: flex;
         flex-direction: column;
@@ -216,6 +227,7 @@ select:focus {
         width: 250px;
     }
 }
+
 /* POPUP */
 .popup-button {
     &__close {
@@ -230,6 +242,7 @@ select:focus {
         cursor: pointer;
         transform: translate(0, -50%) rotate(45deg);
         background: $question-color;
+        
         &::before {
             content: '';
             width: 100%;

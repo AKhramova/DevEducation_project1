@@ -1,3 +1,4 @@
+
 .new-question__background {
   position: fixed;
   top: 0;
@@ -58,17 +59,17 @@ margin-top: 30px;
   }
 }
 .choose-answer {
-display: flex;
-flex-direction: column;
-margin-top: 30px;
-  &__group {
-    display: flex;
-    flex-direction: row;
-    margin-top: 10px;
-    justify-content: space-between;
-    width: 300px;
-    margin: 0 auto;
-  }
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+    &__group {
+      display: flex;
+      flex-direction: row;
+      margin-top: 10px;
+      justify-content: space-between;
+      width: 300px;
+      margin: 0 auto;
+    }
 
 }
 .label-group {
