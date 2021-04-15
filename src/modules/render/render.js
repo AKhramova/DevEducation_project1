@@ -53,5 +53,8 @@ export default function render() {
           supportModal.openPopup(deleteMessagePopup)
         })
       }
-    }).catch(err => console.log(err))
+    })
+    .catch(function (err) {
+      console.log(err)
+    })
 }
