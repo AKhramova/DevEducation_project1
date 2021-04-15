@@ -1,5 +1,6 @@
 var homeModule = function () {
     var pic = document.getElementById('team-photo');
+    var role = document.getElementById('team-role');
     var fullName = document.getElementById('team-name');
     var height = document.getElementById('team-height');
     var weight = document.getElementById('team-weight');
@@ -111,6 +112,7 @@ var homeModule = function () {
     function render(item) {
         pic.src = item.photo;
         fullName.value = item.fullName;
+        role.textContent = item.post;
         height.value = item.height;
         weight.value = item.weight;
         yo.value = item.yo;
@@ -146,28 +148,46 @@ var homeModule = function () {
         var birthDatePattern = /^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[012])\.(19|20)\d\d$/;
         
         if (!fullName.value.length || fullName.value.length > 30) {
+            fullName.placeholder = 'Enter your full name';
             fullName.classList.add('error');
             isValid = false;
+        } else {
+            fullName.classList.remove('error');           
         }
-        if (!height.value.length || height.value.length > 3) {
+        if (!height.value.length || height.value.length > 3 || (Number(height.value) <= 0)) {
+            height.placeholder = 'Enter your height';
             height.classList.add('error');
             isValid = false;
+        } else {
+            height.classList.remove('error');           
         }
-        if (!weight.value.length || weight.value.length > 3) {
+        if (!weight.value.length || weight.value.length > 3 || (Number(weight.value) <= 0)) {
+            weight.placeholder = 'Enter your weight';
             weight.classList.add('error');
             isValid = false;
+        } else {
+            weight.classList.remove('error');           
         }
-        if (!yo.value.length || yo.value.length > 3) {
+        if (!yo.value.length || yo.value.length > 3 || (Number(yo.value) <= 0)) {
+            yo.placeholder = 'Enter your age';
             yo.classList.add('error');
             isValid = false;
+        } else {
+            yo.classList.remove('error');           
         }
         if (!dateOfBirth.value.length || !birthDatePattern.test(dateOfBirth.value)) {
+            dateOfBirth.placeholder = 'Enter your date of birth';
             dateOfBirth.classList.add('error');
             isValid = false;
+        } else {
+            dateOfBirth.classList.remove('error');           
         }
         if (!hobby.value.length || hobby.value.length > 100) {
+            hobby.placeholder = 'Enter your hobby';
             hobby.classList.add('error');
             isValid = false;
+        } else {
+            hobby.classList.remove('error');           
         }
         return isValid;
     }
@@ -182,6 +202,9 @@ var homeModule = function () {
             gen.classList.remove('cursor-text');
             gen.classList.add('cursor-default');
         }
+    }
+    function errorHandler(element) {
+        element.classList.remove('error');
     }
 };
 

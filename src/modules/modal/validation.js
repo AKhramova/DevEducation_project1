@@ -2,10 +2,10 @@ export default function validation(createBtn, textArea, fileSystem) {
   var isChangedFs = true
 
   textArea.addEventListener('input', function () {
-    if (this.value.trim() !== '' && isChangedFs && this.value.length < 255) {
+    if (this.value.trim() !== '' && isChangedFs && this.value.length <= 255) {
       createBtn.disabled = false
     }
-    else if (this.value.trim() === '' || !isChangedFs || this.value.length > 255) {
+    else if (this.value.trim() === '' || !isChangedFs || this.value.length >= 255) {
       createBtn.disabled = true
     }
   })
@@ -19,10 +19,10 @@ export default function validation(createBtn, textArea, fileSystem) {
         }
         isChangedFs = false
       }
-      if (isChangedFs && textArea.value !== '' && textArea.value.length < 255) {
+      if (isChangedFs && textArea.value !== '' && textArea.value.length <= 255) {
         createBtn.disabled = false
       }
-      else if (!isChangedFs || textArea.value !== '' || textArea.value.length > 255) {
+      else if (!isChangedFs || textArea.value !== '' || textArea.value.length >= 255) {
         createBtn.disabled = true
       }
     })
