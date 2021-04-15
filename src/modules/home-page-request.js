@@ -51,7 +51,17 @@ var homeModule = function () {
         cursorTextHandler();
     });
     informationSave.addEventListener('click', function () {
+        if (i === 0) {
+            nextPhoto.classList.remove('visible');
+        } else if (i === data.length - 1) {
+            previousPhoto.classList.remove('visible');
+        } else {
+            nextPhoto.classList.remove('visible');
+            previousPhoto.classList.remove('visible');
+        }
         if (!inputsValidation(data)) {
+            nextPhoto.classList.add('visible');
+            previousPhoto.classList.add('visible');
             return;
         }
         users = [
@@ -202,9 +212,6 @@ var homeModule = function () {
             gen.classList.remove('cursor-text');
             gen.classList.add('cursor-default');
         }
-    }
-    function errorHandler(element) {
-        element.classList.remove('error');
     }
 };
 
