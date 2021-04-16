@@ -44,6 +44,9 @@ var homeModule = function () {
         render(data[i]);
     })
     informationEdit.addEventListener('click', function () {
+        nextPhoto.classList.add('visible');
+        previousPhoto.classList.add('visible');
+
         addUnderline(data);
         editInfo(data);
         informationEdit.classList.add('hidden');
@@ -157,28 +160,28 @@ var homeModule = function () {
         var isValid = true;
         var birthDatePattern = /^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[012])\.(19|20)\d\d$/;
         
-        if (!fullName.value.length || fullName.value.length > 30) {
+        if (!fullName.value.length || fullName.value.length > 24) {
             fullName.placeholder = 'Enter your full name';
             fullName.classList.add('error');
             isValid = false;
         } else {
             fullName.classList.remove('error');           
         }
-        if (!height.value.length || height.value.length > 3 || (Number(height.value) <= 0)) {
+        if (!height.value.length || height.value.length > 3 || (Number(height.value) <= 0) || height.value[0] === '0') {
             height.placeholder = 'Enter your height';
             height.classList.add('error');
             isValid = false;
         } else {
             height.classList.remove('error');           
         }
-        if (!weight.value.length || weight.value.length > 3 || (Number(weight.value) <= 0)) {
+        if (!weight.value.length || weight.value.length > 3 || (Number(weight.value) <= 0) || weight.value[0] === '0')  {
             weight.placeholder = 'Enter your weight';
             weight.classList.add('error');
             isValid = false;
         } else {
             weight.classList.remove('error');           
         }
-        if (!yo.value.length || yo.value.length > 3 || (Number(yo.value) <= 0)) {
+        if (!yo.value.length || yo.value.length > 3 || (Number(yo.value) <= 0) || yo.value[0] === '0')  {
             yo.placeholder = 'Enter your age';
             yo.classList.add('error');
             isValid = false;
@@ -192,7 +195,7 @@ var homeModule = function () {
         } else {
             dateOfBirth.classList.remove('error');           
         }
-        if (!hobby.value.length || hobby.value.length > 100) {
+        if (!hobby.value.length || hobby.value.length > 38) {
             hobby.placeholder = 'Enter your hobby';
             hobby.classList.add('error');
             isValid = false;
