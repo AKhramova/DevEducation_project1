@@ -32,9 +32,19 @@ body {
   }
 }
 
+@keyframes hideBlock {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
 .hidden {
+  animation: hideBlock .2s linear forwards;
   visibility: hidden;
 }
+
 .visible {
   visibility: hidden;
 } 

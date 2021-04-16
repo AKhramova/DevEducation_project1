@@ -1,0 +1,66 @@
+.about-bg{
+  background: linear-gradient(180deg, $gradient-start 0%, $background-color 30%), $background-color;
+  height: 100%;
+}
+
+.about{
+  text-align: center;
+  padding: 40px 0;
+  h1{
+    font-size: 28px;
+  }
+  &__gallery{
+    display: flex;
+  }
+  &__gif-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    img{
+      width: 200px;
+      height: 180px;
+    }
+    span{
+      font-size: 16px;
+      margin-top: 10px;
+      font-weight: 600;
+    }
+  }
+  &__gallery{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__gif-card-welcome{
+    img{
+      width: 400px;
+      height: auto;
+    }
+  }
+}
+
+
+.animation{
+  animation: about 15s infinite alternate;
+}
+@keyframes about{
+  0%{
+      color: red;
+  }
+  20%{
+      color: orange;
+  }
+  40%{
+      color:yellow;
+  }
+  60%{
+      color: green;
+  }
+  80%{
+      color: blue;
+  }
+  100%{
+      color:  red;
+  }
+}

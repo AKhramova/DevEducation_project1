@@ -1,9 +1,8 @@
 var http = require('http')
 var { json } = require('body-parser')
 var jsonParser = json()
-
-const { question } = require('./routes/question')
-const { team } = require('./routes/team')
+var { question } = require('./routes/question')
+var { team } = require('./routes/team')
 
 var headers = {
   'Access-Control-Allow-Origin': '*',
