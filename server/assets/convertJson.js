@@ -9,28 +9,26 @@ var message = {
 
 var ToJSON = {
   read(res, file, headers, query) {
-    fs.readFile(file,
-      'utf-8',
-      function (err, data) {
-        if (err) throw err
-        if (query) {
-          if (query.get('theme') === 'all') {
-            res.writeHead(200, headers)
-            return res.end(data)
-          } else if (query.get('theme')) {
-            var filterData = JSON.parse(data).filter(function (el) {
-              return el.theme.toLowerCase() === query.get('theme')
-            })
-          }
-          res.writeHead(200, headers)
-          return res.end(JSON.stringify(filterData))
-        }
+    var data = fs.readFileSync(file)
+    if (query) {
+      if (query.get('theme') === 'all') {
         res.writeHead(200, headers)
-        res.end(data)
-      })
+        return res.end(data)
+      }
+      else if (query.get('theme')) {
+        var filterData = JSON.parse(data).filter(function (el) {
+          return el.theme.toLowerCase() === query.get('theme')
+        })
+      }
+      res.writeHead(200, headers)
+      return res.end(JSON.stringify(filterData))
+    }
+    res.writeHead(200, headers)
+    res.end(data)
   },
 
   writeQuestions(req, file) {
+    if (!req.body) return false
     var data = JSON.parse(fs.readFileSync(file, 'utf-8'))
     data.unshift(req.body)
 
@@ -46,18 +44,17 @@ var ToJSON = {
       return el.id.toString() !== req.body.id
     })
 
-    fs.writeFile(file, JSON.stringify(afterDelete), () => {
-      this.endResponse(res, headers, { message: message.ok })
-    })
+    fs.writeFileSync(file, JSON.stringify(afterDelete))
+    return this.endResponse(res, headers, { message: message.ok })
+
   },
 
   writeUsers(req, res, file, headers) {
     if (!Array.isArray(req.body)) {
       return this.endResponse(res, headers, { message: message.noArr })
     }
-    fs.writeFile(file, JSON.stringify(req.body), () => {
-      this.endResponse(res, headers, { message: message.ok })
-    })
+    fs.writeFileSync(file, JSON.stringify(req.body))
+    this.endResponse(res, headers, { message: message.ok })
   },
 
   endResponse(res, headers, message) {
