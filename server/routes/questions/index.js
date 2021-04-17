@@ -9,7 +9,6 @@ function question({ req, res, headers, dir, XML, ToJSON, CSV, YAML }) {
     query = new URLSearchParams(parseUrl),
     params = { req, res, dir, headers },
     parsers = { XML, ToJSON, CSV, YAML }
-
   getQuestions({ ...params, query }, parsers)
   postQuestions(params, parsers)
   deleteQuestions(params, parsers)
