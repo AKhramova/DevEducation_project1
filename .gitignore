@@ -3,7 +3,8 @@
 /server/node_modules
 /server/package-lock.json
 package-lock.json
-
+/coverage
+/server/coverage
 # css
 src/styles/*.css
 src/styles/*.css.map

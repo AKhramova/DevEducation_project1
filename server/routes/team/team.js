@@ -1,7 +1,4 @@
-const ToJSON = require('../assets/convertJson')
-var { writeUsers, read } = require('../assets/convertJson')
-
-function team({ req, res, headers, dir }) {
+function team({ req, res, headers, dir, ToJSON }) {
   if (req.url === '/team') {
     if (req.method === "GET") {
       ToJSON.read(res, dir + '/data/developers.json', headers)

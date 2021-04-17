@@ -1,4 +1,6 @@
-const { ToJSON } = require("../assets")
+var ToJSON = require('../convertJson')
+
+
 
 var headers = {
   'Access-Control-Allow-Origin': '*',
@@ -132,7 +134,7 @@ describe('toJSON.deleteQuestion', function () {
   })
 })
 
-describe('toJSON.endResponse', function () {
+describe('toJSON.writeUsers', function () {
   it('should be defined', function () {
     expect(ToJSON.writeUsers).toBeDefined()
   })
@@ -140,20 +142,30 @@ describe('toJSON.endResponse', function () {
     expect(typeof ToJSON.writeUsers).toBe('function')
   })
 
-  it('should be a function', function () {
+  it('should be a invalid arg', function () {
     var res = {
       end: jest.fn(),
       writeHead: jest.fn()
     }
-
     var req = {
       body: {
         "id": 1618565872229,
         "theme": "html"
       }
     }
-
-    expect(ToJSON.writeUsers(req, res, '', headers)).toBe('function')
+    expect(ToJSON.writeUsers(req, res, '', headers)).toBe()
   })
-
+  it('should be a valid arg', function () {
+    var res = {
+      end: jest.fn(),
+      writeHead: jest.fn()
+    }
+    var req = {
+      body: [{
+        "id": 1618565872229,
+        "theme": "html"
+      }]
+    }
+    expect(ToJSON.writeUsers(req, res, '', headers)).toBe()
+  })
 })
