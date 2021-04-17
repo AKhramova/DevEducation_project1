@@ -121,7 +121,6 @@ var homeModule = function () {
             }
         })
     }
-    req();
     function render(item) {
         pic.src = item.photo;
         fullName.value = item.fullName;
@@ -216,6 +215,7 @@ var homeModule = function () {
             gen.classList.add('cursor-default');
         }
     }
+    window.addEventListener('load', req);
 };
 
 export default homeModule;
