@@ -3,15 +3,15 @@ import homeModule from '../modules/homePage/home-page-request';
 import inputsValidation, { validateName, validatePersonNumbers, validateHobby, validateBirthDate } from '../modules/homePage/inputsValidation';
 import homePageSupport from '../modules/homePage/homePageSupport';
 
-describe('homeModule', function() {
-    it('should be defined', function() {
+describe('homeModule', function () {
+    it('should be defined', function () {
         expect(homeModule).toBeDefined();
     })
-    it('should be function', function() {
+    it('should be function', function () {
         expect(typeof homeModule).toBe('function');
     })
 
-    it('should validate name', function() {
+    it('should validate name', function () {
         expect(typeof validateName).toBe('function');
         expect(validateName('')).toBe(false);
         expect(validateName('Superlong name that contains more than 24 symbols should be invalid')).toBe(false);
@@ -21,7 +21,7 @@ describe('homeModule', function() {
         expect(validateName('Valid Name')).not.toBe(false);
     })
 
-    it('should validate person numbers', function() {
+    it('should validate person numbers', function () {
         expect(typeof validatePersonNumbers).toBe('function');
         expect(validatePersonNumbers('')).toBe(false);
         expect(validatePersonNumbers('1234')).toBe(false);
@@ -33,7 +33,7 @@ describe('homeModule', function() {
         expect(validatePersonNumbers('')).not.toBe(true);
         expect(validatePersonNumbers('172')).not.toBe(false);
     })
-    it('should validate person hobby', function() {
+    it('should validate person hobby', function () {
         expect(typeof validateHobby).toBe('function');
         expect(validateHobby('Superlong hobby that contains more than 38 symbols should be invalid')).toBe(false);
         expect(validateHobby('')).toBe(false);
@@ -42,7 +42,7 @@ describe('homeModule', function() {
         expect(validateHobby('')).not.toBe(true);
         expect(validateHobby('singing and dancing')).not.toBe(false);
     })
-    it('should validate person date of birth', function() {
+    it('should validate person date of birth', function () {
         expect(typeof validateBirthDate).toBe('function');
         expect(validateBirthDate('')).toBe(false);
         expect(validateBirthDate('2020.12.12')).toBe(false);
@@ -101,7 +101,7 @@ describe('homeModule', function() {
         expect(validateBirthDate('20.10.1920')).not.toBe(false);
         expect(validateBirthDate('30.10.1920')).not.toBe(false);
     })
-    it('should be valid team data', function() {
+    it('should be valid team data', function () {
         var nameInput = document.createElement('input');
         var heightInput = document.createElement('input');
         var weightInput = document.createElement('input');
@@ -122,11 +122,11 @@ describe('homeModule', function() {
             weight: weightInput,
             yo: yoInput,
             dateOfBirth: birthdayInput,
-            hobby: hobbyInput 
+            hobby: hobbyInput
         };
 
         expect(inputsValidation).toBeDefined();
-        expect(inputsValidation(mockData)).toBe(false); 
+        expect(inputsValidation(mockData)).toBe(false);
         expect(mockData.fullName.classList.contains('error')).toBe(true);
         expect(mockData.height.classList.contains('error')).toBe(true);
         expect(mockData.weight.classList.contains('error')).toBe(true);
@@ -150,7 +150,7 @@ describe('homeModule', function() {
         expect(mockData.hobby.classList.contains('error')).toBe(false);
 
     })
-    it('should be removing error state', function() {
+    it('should be removing error state', function () {
         var errorState = document.createElement('div');
         errorState.classList.add('error');
 
@@ -160,7 +160,7 @@ describe('homeModule', function() {
         expect(errorState.classList.contains('error')).toBe(false);
         expect(errorState.classList.contains('error')).not.toBe(true);
     })
-    it('should be setting error state', function() {
+    it('should be setting error state', function () {
         var setError = document.createElement('input');
         var mockMessage = 'some message';
 
@@ -171,7 +171,7 @@ describe('homeModule', function() {
         expect(setError.classList.contains('error')).toBe(true);
         expect(setError.classList.contains('error')).not.toBe(false);
     })
-    it('should be cursor', function() {
+    it('should be cursor', function () {
         var fn = homePageSupport.cursorTextHandler;
         var mockArr = [];
         var mockInput = document.createElement('input');
@@ -181,7 +181,7 @@ describe('homeModule', function() {
         expect(mockInput.classList.contains('cursor-default')).toBe(false);
         expect(mockInput.classList.contains('cursor-text')).toBe(true);
     })
-    it('should not be cursor', function() {
+    it('should not be cursor', function () {
         var fn = homePageSupport.cursorDefaultHandler;
         var mockArr = [];
         var mockInput = document.createElement('input');
@@ -191,7 +191,7 @@ describe('homeModule', function() {
         expect(mockInput.classList.contains('cursor-default')).toBe(true);
         expect(mockInput.classList.contains('cursor-text')).toBe(false);
     })
-    it('should be underline', function() {
+    it('should be underline', function () {
         var fn = homePageSupport.addUnderline;
 
         var fullName = document.createElement('input');
@@ -207,7 +207,7 @@ describe('homeModule', function() {
             weight,
             yo,
             dateOfBirth,
-            hobby 
+            hobby
         };
         expect(fn).toBeDefined();
         fn(mockData);
@@ -227,7 +227,7 @@ describe('homeModule', function() {
         expect(mockData.dateOfBirth.classList.contains('content__group-style')).toBe(false);
         expect(mockData.hobby.classList.contains('content__group-style')).toBe(false);
     })
-    it('should remove attribute readonly', function() {
+    it('should remove attribute readonly', function () {
         var fn = homePageSupport.editInfo;
 
         var fullName = document.createElement('input');
@@ -250,7 +250,7 @@ describe('homeModule', function() {
             weight,
             yo,
             dateOfBirth,
-            hobby 
+            hobby
         };
         expect(fn).toBeDefined();
         expect(mockData.fullName.readOnly).toBe(true);
@@ -269,7 +269,7 @@ describe('homeModule', function() {
         expect(mockData.dateOfBirth.readOnly).toBe(false);
         expect(mockData.hobby.readOnly).toBe(false);
     })
-    it('should add attribute readonly', function() {
+    it('should add attribute readonly', function () {
         var fn = homePageSupport.saveInfo;
 
         var fullName = document.createElement('input');
@@ -292,7 +292,7 @@ describe('homeModule', function() {
             weight,
             yo,
             dateOfBirth,
-            hobby 
+            hobby
         };
         expect(fn).toBeDefined();
         expect(mockData.fullName.readOnly).toBe(false);
@@ -311,21 +311,21 @@ describe('homeModule', function() {
         expect(mockData.dateOfBirth.readOnly).toBe(true);
         expect(mockData.hobby.readOnly).toBe(true);
     })
-    it('should do render', function() {
+    it('should do render', function () {
         var fn = homePageSupport.render;
-        var item = 
-            {
-              id: 1,
-              fullName: "Малик Алексей",
-              photo: "./img/team/AlexM.jpg",
-              dateOfBirth: "27.06.1994",
-              yo: '26',
-              height: '183',
-              weight: '70',
-              post: "Front-end developer",
-              hobby: "компютерные игры, книги, музыка"
-            };
-        
+        var item =
+        {
+            id: 1,
+            fullName: "Малик Алексей",
+            photo: "./img/team/AlexM.jpg",
+            dateOfBirth: "27.06.1994",
+            yo: '26',
+            height: '183',
+            weight: '70',
+            post: "Front-end developer",
+            hobby: "компютерные игры, книги, музыка"
+        };
+
         var pic = document.createElement('image');
         var nameInput = document.createElement('input');
         var roleInput = document.createElement('span');
@@ -342,7 +342,7 @@ describe('homeModule', function() {
             weight: weightInput,
             yo: yoInput,
             dateOfBirth: birthdayInput,
-            hobby: hobbyInput 
+            hobby: hobbyInput
         };
         expect(fn).toBeDefined();
         fn(mockData, item);

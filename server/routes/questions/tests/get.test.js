@@ -1,4 +1,5 @@
-var getQuestions = require("../get")
+var questions = require("../questions")
+var getQuestions = questions.getQuestions
 
 var headers = {
   'Access-Control-Allow-Origin': '*',

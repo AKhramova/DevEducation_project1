@@ -1,5 +1,4 @@
 import { api } from '../support'
-import render from '../render/render'
 
 export default function sendQuestion({ createBtn, textArea, select, answer, fileSystem, closeFunc, modal, render }) {
   createBtn.addEventListener('click', function () {

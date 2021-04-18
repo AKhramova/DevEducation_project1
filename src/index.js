@@ -9,13 +9,11 @@ window.addEventListener('DOMContentLoaded', () => {
     filter(api, render);
     render(api);
     setQuestion(render);
-    deleteQuestions(render);
+    deleteQuestions(render, api);
   }
   else if (window.location.pathname === '/about.html') {
-    // страница about; 
   }
   else if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
-    // страница about; 
     homeModule()
   }
 })

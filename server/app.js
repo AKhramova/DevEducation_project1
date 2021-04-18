@@ -4,6 +4,7 @@ var jsonParser = json()
 var { question } = require('./routes/questions')
 var { team } = require('./routes/team/team')
 var { XML, ToJSON, CSV, YAML } = require('./assets')
+var questions = require('./routes/questions/questions')
 
 var headers = {
   'Access-Control-Allow-Origin': '*',
@@ -22,7 +23,7 @@ var server = http.createServer(function (req, res) {
   jsonParser(req, res, function (err) {
     if (err) throw err
     var routesParams = { req, res, headers, dir: __dirname, ToJSON }
-    var questionParams = { req, res, headers, dir: __dirname, XML, ToJSON, CSV, YAML }
+    var questionParams = { ...routesParams, XML, ToJSON, CSV, YAML, questions }
     team(routesParams)
     question(questionParams)
   })
