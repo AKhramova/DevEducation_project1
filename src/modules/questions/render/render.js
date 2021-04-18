@@ -1,4 +1,3 @@
-import { api } from '../support'
 import { supportModal } from '../support';
 import date from './date';
 export default function render(api) {

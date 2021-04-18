@@ -7,7 +7,7 @@ function xmlHttpMock(status) {
     if (status < 200 || status >= 300) {
       this.onerror()
     }
-    addEventListener = jest.fn()
+    addEventListener = jest.fn().mockImplementation(function () { })
     setRequestHeader = jest.fn()
   })
   function xmlHttpClassmock() {
@@ -36,14 +36,20 @@ describe('api.getRequest', function () {
   })
   it('should be a function', function () {
     xmlHttpMock(400)
-    api.getRequest('').catch(() => {
+    return api.getRequest('').catch(() => {
       expect(open).toBeCalledWith("GET", "http://localhost:3000", true)
     })
   })
   it('should be a function', function () {
     xmlHttpMock(201)
-    api.getRequest('').catch(() => {
+    return api.getRequest('').catch(() => {
       expect(open).toBeCalledWith("GET", "http://localhost:3000", true)
+    })
+  })
+  it('should be a function', function () {
+    xmlHttpMock(201)
+    return api.getRequest('').catch(() => {
+      expect(addEventListener).toHaveBeenCalled()
     })
   })
 })
@@ -57,13 +63,9 @@ describe('api.postRequest', function () {
   })
   it('should be a function', function () {
     xmlHttpMock(400)
-    api.postAndDeleteRequest('').catch(() => {
+    return api.postAndDeleteRequest('').catch(() => {
       expect(open).toBeCalledWith("POST", "http://localhost:3000", true)
     })
   })
-  it('should be a function', function () {
-    xmlHttpMock(201)
-    api.getRequest('/questions').catch(() => { })
-    expect(setRequestHeader).toBeCalledWith("Content-Type", "application/json")
-  })
+
 })

@@ -14,13 +14,12 @@ export default function filter(api, render) {
   fileFilter.value = localStorage.getItem(fileName)
   themeFilter.value = localStorage.getItem(themeName)
 
-  fileFilter.addEventListener('change', function (e) {
-    localStorage.setItem(fileName, e.target.value)
-    render(api)
-  })
-
-  themeFilter.addEventListener('change', function (e) {
-    localStorage.setItem(themeName, e.target.value)
-    render(api)
+  changeHandle(fileFilter, fileName, render, api)
+  changeHandle(themeFilter, themeName, render, api)
+}
+export function changeHandle(elem, filter, fn, api) {
+  elem.addEventListener('change', function (e) {
+    localStorage.setItem(filter, e.target.value)
+    fn(api)
   })
 }

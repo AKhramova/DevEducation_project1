@@ -1,4 +1,5 @@
-var postQuestions = require("../post")
+var questions = require("../questions")
+var postQuestions = questions.postQuestions
 
 var headers = {
   'Access-Control-Allow-Origin': '*',

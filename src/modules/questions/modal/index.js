@@ -24,6 +24,8 @@ export default function setQuestion(render) {
   })
   validation(createQuestion, writeQuestion, fileSystem)
 
+
+
   addNewQuestion.addEventListener('click', function () {
     openPopup(modalNewQuestion);
   })

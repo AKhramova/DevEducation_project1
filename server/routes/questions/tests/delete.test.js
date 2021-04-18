@@ -1,4 +1,5 @@
-var deleteQuestions = require("../delete")
+var questions = require("../questions")
+var deleteQuestions = questions.deleteQuestions
 
 var headers = {
   'Access-Control-Allow-Origin': '*',
