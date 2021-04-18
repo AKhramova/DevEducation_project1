@@ -201,7 +201,7 @@ select:focus {
     top: 0;
     left: 0;
     visibility: visible;
-    animation: showBlock .2s linear forwards;
+    transition: .4s ease;
     &__body {
         display: flex;
         flex-direction: column;
@@ -225,6 +225,13 @@ select:focus {
         display: flex;
         justify-content: space-between;
         width: 250px;
+    }
+
+    &.hidden {
+        display: block;
+        opacity: 0;
+        visibility: hidden;
+        animation: none;
     }
 }
 

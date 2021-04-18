@@ -46,12 +46,7 @@ describe('api.getRequest', function () {
       expect(open).toBeCalledWith("GET", "http://localhost:3000", true)
     })
   })
-  it('should be a function', function () {
-    xmlHttpMock(201)
-    return api.getRequest('').catch(() => {
-      expect(addEventListener).toHaveBeenCalled()
-    })
-  })
+
 })
 
 describe('api.postRequest', function () {

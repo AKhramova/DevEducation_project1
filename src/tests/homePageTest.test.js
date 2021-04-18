@@ -1,4 +1,3 @@
-import { info } from 'node-sass';
 import homeModule from '../modules/homePage/home-page-request';
 import inputsValidation, { validateName, validatePersonNumbers, validateHobby, validateBirthDate } from '../modules/homePage/inputsValidation';
 import homePageSupport from '../modules/homePage/homePageSupport';
