@@ -2,7 +2,7 @@ import { api } from "./support";
 import render from "./render/render";
 import { supportModal } from "./support";
 
-export default function deleteQuestions() {
+export default function deleteQuestions(render) {
   var deleteMessagePopup = document.getElementById('delete-message-popup'),
     cancelDeleteQuestion = document.getElementById('cancel-delete-question'),
     confirmDeleteQuestion = document.getElementById('confirm-delete-question'),
@@ -16,7 +16,7 @@ export default function deleteQuestions() {
 
     api.postAndDeleteRequest('/questions', body, "DELETE")
       .then(() => {
-        render()
+        render(api)
       }).catch(err => console.log(err))
     supportModal.closePopup(deleteMessagePopup)
   })

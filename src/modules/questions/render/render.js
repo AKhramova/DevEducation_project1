@@ -1,7 +1,7 @@
 import { api } from '../support'
 import { supportModal } from '../support';
 import date from './date';
-export default function render() {
+export default function render(api) {
   var fileFilter = document.querySelector('#file-system'),
     themeFilter = document.querySelector('#questions-theme'),
     questionContainer = document.querySelector('.question-list__container')

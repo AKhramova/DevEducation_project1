@@ -1,7 +1,7 @@
 import sendQuestion from './sendQuestion'
 import validation from './validation'
 
-export default function setQuestion() {
+export default function setQuestion(render) {
   var writeQuestion = document.querySelector('#writeQuestion'),
     selectTheme = document.querySelector('#selectTheme'),
     answer = document.querySelectorAll('.answer-radio'),
@@ -19,7 +19,8 @@ export default function setQuestion() {
     closeFunc: closePopup,
     modal: modalNewQuestion,
     answer,
-    fileSystem
+    fileSystem,
+    render
   })
   validation(createQuestion, writeQuestion, fileSystem)
 

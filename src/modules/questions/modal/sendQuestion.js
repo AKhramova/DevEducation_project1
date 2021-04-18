@@ -1,7 +1,7 @@
 import { api } from '../support'
 import render from '../render/render'
 
-export default function sendQuestion({ createBtn, textArea, select, answer, fileSystem, closeFunc, modal }) {
+export default function sendQuestion({ createBtn, textArea, select, answer, fileSystem, closeFunc, modal, render }) {
   createBtn.addEventListener('click', function () {
     var question = {
       id: null,
@@ -31,7 +31,7 @@ export default function sendQuestion({ createBtn, textArea, select, answer, file
         for (var i = 0; i < question.formats.length; i++) {
           if (question.formats[i].toLowerCase() === fileFilter &&
             (question.theme.toLowerCase() === themeFilter || themeFilter === 'all')) {
-            render()
+            render(api)
           }
         }
       }).catch(err => console.log(err))

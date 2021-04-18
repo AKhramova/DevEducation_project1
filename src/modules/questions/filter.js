@@ -1,6 +1,4 @@
-import render from './render/render'
-
-export default function filter() {
+export default function filter(api, render) {
   var fileFilter = document.querySelector('#file-system'),
     themeFilter = document.querySelector('#questions-theme'),
     fileName = 'file_filter',
@@ -18,11 +16,11 @@ export default function filter() {
 
   fileFilter.addEventListener('change', function (e) {
     localStorage.setItem(fileName, e.target.value)
-    render()
+    render(api)
   })
 
   themeFilter.addEventListener('change', function (e) {
     localStorage.setItem(themeName, e.target.value)
-    render()
+    render(api)
   })
 }
