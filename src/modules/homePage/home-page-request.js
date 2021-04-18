@@ -118,7 +118,6 @@ var homeModule = function () {
                     alert('Empty data');
                     return;
                 }
-                console.log(data);
 
                 homePageSupport.render(params, data[0]);
                 previousPhoto.classList.add('visible');
