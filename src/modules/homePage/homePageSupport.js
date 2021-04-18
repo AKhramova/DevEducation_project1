@@ -45,10 +45,12 @@ var homePageSupport = {
     dateOfBirth.setAttribute('readonly', `readonly`);
     hobby.setAttribute('readonly', `readonly`);
   },
-  valid(elem, message) {
+  setErrorState(elem, message) {
     elem.placeholder = message;
     elem.classList.add('error');
-    return false;
+  },
+  removeErrorState(elem) {
+    elem.classList.remove('error');
   }
 }
 
