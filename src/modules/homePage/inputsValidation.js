@@ -1,40 +1,74 @@
 import homePageSupport from "./homePageSupport";
 
+export const validateName = function(value) {
+  if (!value.length || value.length > 24) {
+    return false;
+  }
+  return true;
+}
+
+export const validateHobby = function(value) {
+  if (!value.length || value.length > 38) {
+    return false;
+  }
+  return true;
+}
+
+export const validateBirthDate = function(value) {
+  var birthDatePattern = /^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[012])\.(19|20)\d\d$/;
+  if (!value.length || !birthDatePattern.test(value)) {
+    return false;
+  }
+  return true;
+}
+
+export const validatePersonNumbers = function(value) {
+  if (!value.length || value.length > 3 || (Number(value) <= 0) || value[0] === '0') {
+    return false;
+  }
+  return true;
+}
+
 export default function inputsValidation({ fullName, height, weight, yo, dateOfBirth, hobby }) {
   var isValid = true;
-  var birthDatePattern = /^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[012])\.(19|20)\d\d$/;
+  var setErrorState = homePageSupport.setErrorState;
+  var removeErrorState = homePageSupport.removeErrorState;
 
-  var valid = homePageSupport.valid
-
-  if (!fullName.value.length || fullName.value.length > 24) {
-    isValid = valid(fullName, 'Enter your full name')
+  if (!validateName(fullName.value)) {
+    isValid = false;
+    setErrorState(fullName, 'Enter your full name');
   } else {
-    fullName.classList.remove('error');
+    removeErrorState(fullName);
   }
-  if (!height.value.length || height.value.length > 3 || (Number(height.value) <= 0) || height.value[0] === '0') {
-    isValid = valid(height, 'Enter your height')
+  if (!validatePersonNumbers(height.value)) {
+    isValid = false;
+    setErrorState(height, 'Enter your height');
   } else {
-    height.classList.remove('error');
+    removeErrorState(height);
   }
-  if (!weight.value.length || weight.value.length > 3 || (Number(weight.value) <= 0) || weight.value[0] === '0') {
-    isValid = valid(weight, 'Enter your weight')
+  if (!validatePersonNumbers(weight.value)) {
+    isValid = false;
+    setErrorState(weight, 'Enter your weight');
   } else {
-    weight.classList.remove('error');
+    removeErrorState(weight);
   }
-  if (!yo.value.length || yo.value.length > 3 || (Number(yo.value) <= 0) || yo.value[0] === '0') {
-    isValid = valid(yo, 'Enter your age')
+  if (!validatePersonNumbers(yo.value)) {
+    isValid = false;
+    setErrorState(yo, 'Enter your age');
   } else {
-    yo.classList.remove('error');
+    removeErrorState(yo);
   }
-  if (!dateOfBirth.value.length || !birthDatePattern.test(dateOfBirth.value)) {
-    isValid = valid(dateOfBirth, 'Enter your date of birth')
+  if (!validateBirthDate(dateOfBirth.value)) {
+    isValid = false;
+    setErrorState(dateOfBirth, 'Enter your date of birth');
   } else {
-    dateOfBirth.classList.remove('error');
+    removeErrorState(dateOfBirth);
   }
-  if (!hobby.value.length || hobby.value.length > 38) {
-    isValid = valid(hobby, 'Enter your hobby')
+  if (!validateHobby(hobby.value)) {
+    isValid = false;
+    setErrorState(hobby, 'Enter your hobby');
   } else {
-    hobby.classList.remove('error');
+    removeErrorState(hobby);
   }
   return isValid;
 }
